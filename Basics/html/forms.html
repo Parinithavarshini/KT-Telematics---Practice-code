@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>KTT Forms</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    </head>
+    <body>
+        <h2>KTT FORMS</h2>
+        <form action="result.html" method="get">
+            <div>
+                <label for="Username">Username : <br></label>
+                <input type="text" name="Username" id="Username" placeholder="Username" maxlength="15" required> <!--value="Parinitha"--> <!--Pre-filling the input field with a default value-->
+            </div>
+            <div>
+                <label for="Password">Password : <br></label>
+                <input type="password" name="Password" id="Password" placeholder="Password" minlength="8" required> <!--Input field for password with validation for minimum and maximum length-->
+            </div>
+            <div>
+                <label for="DOB">DOB : <br></label>
+                <input type="date" name="DOB" id="DOB" placeholder="Type your DOB" min="1200-01-01" max="3000-12-31" step="10" required> <!--Input field for password with validation for minimum and maximum length-->
+            </div>
+            <div>
+                <label for="Email">Email : <br></label>
+                <input type="email" name="Email" id="Email" placeholder="Type your email" required> <!--Input field for email with validation for email format-->
+            </div>
+            <div>
+                <label for="link">Profile link : <br></label>
+                <input type="url" name="link" id="link" placeholder="Type your profile link" required> <!--Input field for email with validation for email format-->
+            </div>
+            <div>
+                <label for="about">About You : <br></label>
+                <textarea name="about" id="about" rows="10" cols="50" placeholder="Tell us about yourself" required></textarea> <!--Text area for multi-line input with specified rows and columns-->
+            </div>
+            <div>
+                <input type="checkbox" name="terms" id="terms" required> <!--Checkbox for accepting terms and conditions with validation to ensure it is checked-->
+                <label for="terms">I agree to the terms and conditions : <br></label>
+            </div>
+            <div>
+                <p>Select the gender</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female</label>
+            </div>
+            <div>
+                <label for="country">Select your country : <br></label>
+                <select name="country" id="country" required>
+                    <option value="">Select a country</option>
+                    <option value="USA">United States of America</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="India">India</option>
+                </select>
+            </div>
+            <div>
+                <label for="file"><br>Upload your profile picture : <br></label>
+                <input type="file" name="file" id="file" required> <!--Input field for file upload with validation for accepted file types-->
+            </div>
+            <button type="submit">Sign Up</button>
+            <button type="reset">Reset</button>
+        </form>
+    </body>
+</html>
