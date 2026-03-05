@@ -1,8 +1,36 @@
+/*Grouping css selectors*/
+label,input{                     
+    color: blue; 
+}
+/*Nesting css selectors*/
+ul li{
+    list-style-type: square;
+}
+/*index.html file*/
+/*Pseudo element selector*/
+blockquote::first-line{
+    color: blue;
+}
+/*Class in about.html*/
+/*Pseudo class selector*/
+.html:hover{
+    color: rgb(132, 69, 2);
+}
+/*Universal selector*/
+*{
+    font-family: 'Times New Roman';
+    font-size: medium;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/026/132/901/non_2x/web-page-background-image-light-gradient-with-subtle-linear-pattern-free-vector.jpg);
+    margin: 0;
+}
+/*visited,focus*/
+button:hover{
+    color: rgb(244, 66, 1);
+}
 nav{
     display: flex;
     justify-content: center;
-    gap: 400px;
-    text-decoration:dashed;
+    gap: 100px;
 }
 span{
     color: blueviolet;
@@ -15,13 +43,38 @@ div{
 {
     color: brown;
 }
-.html{
-    color: rgb(26, 5, 130);
-}
 .css{
-    color: blue;
+    color: rgb(6, 6, 152);
 }
 .img{
     width:100%;
     height: auto;
 }
+/*project file*/
+.container{
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+/*project file*/
+.box{
+    border: 2px solid black;
+    padding: 20px;
+    width: 250px;
+/*index file*/
+}
+.box1{
+    border:1px solid black;
+    padding: 5px;
+    width: 65px;
+    height: 35px;
+    margin: 12px;
+}
+/*index file*/
+/*project file*/
+@media(max-width:600px){
+    .container{
+        flex-direction: column;
+    }
+}
+

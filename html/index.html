@@ -4,39 +4,43 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Portfolio</title> <!--Title appears on browser tab-->
-        <link rel="icon" href="images/image1.jpg"> <!--Create favicon icon-->
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" href="../images/image1.jpg">
+        <link rel="stylesheet" href="../css/styles.css"> <!--External CSS-->
     </head>
     <body>
         <nav>
-            <a href="index.html"><b>Home page</b></a>
-            <a href="about.html"><b>About</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="contact.html"><b>Contact</b></a>
+            <div class="box1"><a href="index.html">Home page</a></div>
+            <div class="box1"><a href="about.html">About</a></div>
+            <div class="box1"><a href="projects.html">Projects</a></div>
+            <div class="box1"><a href="contact.html">Contact</a></div>
         </nav>
         <header>
-            <img src="images/PHOTO.jpeg" height="200" width="200" alt="Image of the student">
-            <h1>PARINITHA VARSHINI S</h1>
+            <img src="../images/PHOTO.jpeg" height="200" width="200" alt="Image">
+            <h1 style="color: rgb(2, 2, 120);">PARINITHA VARSHINI S</h1>    <!--Inline CSS-->
             <p><b>KT Telematic Solutions Pvt.Ltd.</b></p>
             <blockquote><p>I am <b>Parinitha Varshini S</b>, currently working at <strong>KTT (KT Telematic Solutions Pvt. Ltd.)</strong> as a passionate and detail-oriented professional in the field of technology.With a background in <i>Computer Science and Design</i>, I have a strong interest in web development, networking, and software systems.At KTT, I am gaining <em>hands-on experience</em> in real-time tracking and telematics solutions, enhancing my technical knowledge and problem-solving skills. I am committed to continuous learning and contributing effectively to innovative, technology-driven solutions.</p></blockquote>
         </header>
         <section>
             <div>
             <h2>About me</h2>
+            <style>h2{color: rgb(2, 2, 120);}</style> <!--Internal CSS-->
             <p>I am Parinitha Varshini S, currently working at <q>KT Telematic Solutions Pvt. Ltd</q>.<br>
             I am passionate about technology, problem-solving, and building practical solutions.<br>
             With a background in Computer Science and Design, I continuously explore new tools<br>
             and technologies to enhance my skills.</p>
             <h3>Professional Experience</h3>
+            <style>h3{color: rgb(2, 2, 120);}</style>
             <p>At KTT, I work on real-time tracking and telematics solutions.<br>
             This experience has helped me understand networking concepts,
             system integration, and real-world technical implementations.<br>
             I focus on learning through hands-on practice and teamwork.</p>
             <h4>Technical Skills</h4>
+            <style>h4{color: rgb(2, 2, 120);}</style>
             <p>I have knowledge in <span>HTML, CSS, JavaScript,React,SQL.</span>
             <br>I am also interested in
             software testing, networking, and system-level concepts.</p>
             <h5>Projects</h5>
+            <style>h5{color: rgb(2, 2, 120);}</style>
             <p>I have worked on academic and personal projects including 
             web development applications.<br>Machine learning-based 
             prediction system.<br> These projects strengthened my logical 
@@ -44,7 +48,7 @@
             </div>
         </section>
         <footer>
-            <a href="mailto:parileethi@gmail.com">G-mail link for any queries<br><br></a>
+            <a href="mailto:parileethi@gmail.com">G-mail link for any queries</a><br><br>
             <a href="https://github.com/Parinithavarshini/KTT">Github Link</a>
             <p id="copy">&copy;2026 KTT Copyright</p>
         </footer>

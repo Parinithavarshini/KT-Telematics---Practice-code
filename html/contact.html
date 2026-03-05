@@ -4,18 +4,19 @@
         <title>Contact</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="icon" href="images/image1.jpg">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="icon" href="../images/image1.jpg">
     </head>
     <body>
         <nav>
-            <a href="index.html"><b>Home page</b></a>
-            <a href="about.html"><b>About</b></a>
-            <a href="projects.html"><b>Projects</b></a>
-            <a href="contact.html"><b>Contact</b></a>
+            <div class="box1"><a href="index.html">Home page</a></div>
+            <div class="box1"><a href="about.html">About</a></div>
+            <div class="box1"><a href="projects.html">Projects</a></div>
+            <div class="box1"><a href="contact.html">Contact</a></div>
         </nav>
         <h3>ENTER YOUR DETAILS</h3>
         <form action="#" method="get">
+            <div class="form">
             <div>
                 <label for="Username">Username<br></label>
                 <input type="text" name="Username" id="Username" placeholder="Enter your name" required><br><br>
@@ -34,7 +35,7 @@
                     <option value="">Select your Country</option>
                     <option value="USA">USA</option>
                     <option value="UK">UK</option>
-                    <option value="India">India</option>
+                    <option selected value="India">India</option>
                 </select>
             </div>
             <div>
@@ -68,6 +69,7 @@
                 <label for="file">Upload your resume<br></label>
                 <input type="file" name="file" id="file" accept=".pdf,.docx" required>
             </div><br>
+            </div>
                 <button type="submit">SUBMIT</button>
                 <button type="reset">RESET</button>
                 <button type="button">CLICK HERE</button>
