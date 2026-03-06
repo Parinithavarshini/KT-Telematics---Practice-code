@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Movie Booking</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="icon" href="../images/Favicon.jpg">
+        <link rel="stylesheet" href="../css/movie.css">
+    </head>
+    <body class="book">
+        <nav>
+            <div class="h1">
+            <h1 id="you">M4You</h1>
+            <a href="#" class="h3"><h2>Home</h2></a>
+            <a href="#" class="h3"><h2>Movies</h2></a>
+            <a href="#" class="h3"><h2>Theatres</h2></a>
+            <a href="#" class="h3"><h2>News</h2></a>
+            </div>
+            </nav>
+        <h3>ENTER YOUR DETAILS</h3>
+        <form action="#" method="get">
+            <div class="form">
+            <div>
+                <label for="Username">Username<br></label>
+                <input type="text" name="Username" id="Username" placeholder="Enter your name" required><br><br>
+            </div>
+            <div>
+                <label for="Password">Password<br></label>
+                <input type="password" name="Password" id="Password" placeholder="Enter your password" required minlength="6"><br><br>
+            </div>
+            <div>
+                <label for="dob">Date of Birth<br></label>
+                <input type="date" name="dob" id="dob" required><br><br>
+            </div>
+            <div>
+                <label for="country">Choose your country</label>
+                <select name="country" id="country" required>
+                    <option value="">Select your Country</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                    <option selected value="India">India</option>
+                </select>
+            </div>
+            <div>
+                <p>Select your gender</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female<br><br></label>
+            </div>
+            <div>
+                <label for="mail">Enter your email<br></label>
+                <input type="email" name="mail" id="mail" required placeholder="Eg:xyz@gmail.com"><br><br>
+            </div>
+            <div>
+                <label for="phone">Phone number<br></label>
+                <input type="tel" name="phone" id="phone" required maxlength="10"><br><br>
+            </div>
+            <div>
+                <label for="about">About<br></label>
+                <textarea name="about" id="about" rows="10" cols="50" placeholder="Tell about yourself"></textarea>
+            </div>
+            <div>
+                <label for="link"><br><br>Enter your portfolio link<br></label>
+                <input type="url" name="link" id="link" required><br><br>
+            </div>
+            <div>
+                <input type="checkbox" name="box" id="box" required>
+                <label for="box">Provided details are correct<br><br></label>
+            </div>
+            <div>
+                <label for="file">Upload your resume<br></label>
+                <input type="file" name="file" id="file" accept=".pdf,.docx" required>
+            </div><br>
+            </div>
+                <button type="submit">SUBMIT</button>
+                <button type="reset">RESET</button>
+                <button type="button">CLICK HERE</button>
+        </form>
+    </body>
+</html>

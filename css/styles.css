@@ -49,6 +49,7 @@ div{
 .img{
     width:100%;
     height: auto;
+    margin: 0;
 }
 /*project file*/
 .container{
@@ -77,4 +78,3 @@ div{
         flex-direction: column;
     }
 }
-
