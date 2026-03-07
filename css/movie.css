@@ -5,18 +5,22 @@ body{
     display: flex;
     gap: 25px;
     margin-top: 3px;
+    margin-left: 12px;
+}
+.main{
+    color: #dcc063;
 }
 .h2{
-    color: #f58d32;
+    color: #dcc063;
     margin-left: 30px;
     margin-top: 15px;
 }
 .h3{
-    color: #e7c5a7;
+    color: #fffefe;
     margin-left: 10px;
 }
 .h3:hover{
-    color:#f4770a
+    color:#dcc063;
 }
 .container{
     display: flex;
@@ -26,7 +30,9 @@ body{
 .list{
     height:600px;
     width: 300px;
-    background-color:#f4770a;
+    background-color:#181818;
+    color: azure;
+    box-shadow: 0px 2px 10px #eac856;
     margin-left: 10px;
 }
 .list h3{
@@ -46,13 +52,13 @@ body{
     margin-top: 15px;
     height: 35px;
     width: 100px;
-    background-color:#f4770a;
+    background-color:#dfbe51;
     margin-left: 95px;
     border-radius: 13px;
     border-color: black;
 }
 .apply button:hover{
-    background-color: antiquewhite;
+    background-color: rgb(249, 250, 249);
     border-color: black;
 }
 .moviebox{
@@ -60,81 +66,88 @@ height:350px;
 width:1200px;
 margin-left: 5px;
 background-color:antiquewhite;
-background-image: url(https://tse4.mm.bing.net/th/id/OIP.FfUjDYD8kDnQqpKKGPbGhgHaDH?pid=Api&P=0&h=180);
+background-image: url(https://tse3.mm.bing.net/th/id/OIP.xT-2eRBdbbmk5GA_J4hqYwHaDZ?pid=Api&P=0&h=180);
 background-repeat: no-repeat;
 background-size: cover;
+background-position: center;
+box-shadow: 0px 2px 10px #eac856;
 }
 
 .apply1{
     margin: 30px;
     height: 35px;
     width: 150px;
-    background-color:#f4770a;
+    background-color:#dcc063;
     margin-left: 35px;
     border-radius: 13px;
-    border-color: black;
+    border: none;
 }
 .apply1:hover{
     background-color: aliceblue;
 }
 .screen{
-    margin: 7px;
+    margin-top: 10px;
     display: flex;
 }
 .apply2{
     margin: 10px;
     height: 25px;
     width: 100px;
-    background-color:#f4770a;
+    background-color:#dcc063;
     margin-left: 10px;
-    border-radius: 5px;
-    border-color: black;
+    border-radius: 4px;
+    border: none;
 }
 .apply3{
     margin: 10px;
     height: 25px;
     width: 90px;
-    background-color:#f4770a;
-    border-radius: 5px;
-    border-color: black;
-}
-.new{
-    margin-top: 265px;
-    height: 230px;
-    width: 650px;
-    background-image: url(https://tse2.mm.bing.net/th/id/OIP.ggkTVif3mxMPah7u6bT9NAHaEK?pid=Api&P=0&h=180);
-    margin-left: 3px;
-    border-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.new1{
-    margin-top: 265px;
-    height: 230px;
-    width: 650px;
-    background-image: url(https://tse3.mm.bing.net/th?id=OIF.y7CfaumTdtKQFJVc%2fWpxdA&pid=Api&P=0&h=180);
-    margin-left: 10px;
-    border-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.new2{
-    margin-top: 265px;
-    height: 230px;
-    width: 650px;
-    background-image: url(https://tse2.mm.bing.net/th/id/OIP.3bT0oqYF-6P09iD79BZcDQHaED?pid=Api&P=0&h=180);
-    margin-left: 10px;
-    border-color: black;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color:#dcc063;
+    border-radius: 4px;
+    border: none;
 }
 .apply4{
     margin: 10px;
     height: 25px;
     width: 90px;
-    background-color:#f4770a;
-    border-radius: 5px;
+    background-color:#dcc063;
+    border-radius: 4px;
+    border: none;
+}
+.new{
+    margin-top: 265px;
+    height: 230px;
+    width: 680px;
+    background-image: url(https://tse3.mm.bing.net/th/id/OIP.06pi3eRHZMNInVwO0jeFUgHaDg?pid=Api&P=0&h=180);
+    margin-left: 1px;
     border-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    box-shadow: 0px 2px 10px #eac856;
+}
+.new1{
+    margin-top: 265px;
+    height: 230px;
+    width: 680px;
+    background-image: url(https://tse4.mm.bing.net/th/id/OIP.uFXvtF8eGjV1vyDWNIbXDwHaEK?pid=Api&P=0&h=180);
+    margin-left: 25px;
+    border-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 2px 10px #eac856;
+}
+.new2{
+    margin-top: 265px;
+    height: 230px;
+    width: 680px;
+    background-image: url(https://tse1.mm.bing.net/th/id/OIP.U8YE9N0MO2NNg5MZYFK3MQHaDc?pid=Api&P=0&h=180);
+    margin-left: 25px;
+    border-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 2px 10px #eac856;
 }
 .new button:hover{
     background-color: antiquewhite;
@@ -149,11 +162,33 @@ background-size: cover;
     border-color: black;
 }
 .book{
-    background-color: aliceblue;
+    background-color: rgb(5, 5, 5);
+    color: white;
+    margin-left: 500px;
 }
-.mai{
-    color: #ff7904;
+.main{
+    color:#dcc063;
     font-size:xx-large;
     margin-top: 15px;
     margin-left: 12px;
+}
+#clip{
+    margin-left: 330px;
+    width: 60%;
+    background-position: center;
+}
+.whole{
+    margin-left: 70px;
+}
+.up{
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    margin: 15px;
+}
+.come{
+    margin-left: 410px;
+    float: left;
+    color: #d4d4d4;
+    text-align: left;
 }

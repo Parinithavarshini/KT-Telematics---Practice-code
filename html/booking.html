@@ -10,14 +10,15 @@
     <body class="book">
         <nav>
             <div class="h1">
-            <h1 id="you">M4You</h1>
-            <a href="#" class="h3"><h2>Home</h2></a>
-            <a href="#" class="h3"><h2>Movies</h2></a>
-            <a href="#" class="h3"><h2>Theatres</h2></a>
+            <h1 id="you" style="color: #dcc063; margin-top: 15px;">M4You</h1>
+            <a href="movie.html" class="h3"><h2>Home</h2></a>
+            <a href="upcoming.html" class="h3"><h2>Movies</h2></a>
+            <a href="theatres.html" class="h3"><h2>Theatres</h2></a>
             <a href="#" class="h3"><h2>News</h2></a>
             </div>
-            </nav>
-        <h3>ENTER YOUR DETAILS</h3>
+        </nav>
+        <div class="whole">
+        <h3>ENTER YOUR DETAILS TO BOOK YOUR TICKETS</h3>
         <form action="#" method="get">
             <div class="form">
             <div>
@@ -57,25 +58,32 @@
                 <input type="tel" name="phone" id="phone" required maxlength="10"><br><br>
             </div>
             <div>
-                <label for="about">About<br></label>
-                <textarea name="about" id="about" rows="10" cols="50" placeholder="Tell about yourself"></textarea>
+                <label for="ticket">Number of tickets<br></label>
+                <input type="number" name="ticket" id="ticket" required maxlength="3"><br><br>
             </div>
             <div>
-                <label for="link"><br><br>Enter your portfolio link<br></label>
-                <input type="url" name="link" id="link" required><br><br>
+                <label for="mname">Choose Movie </label>
+                <select name="mname" id="mname" required>
+                    <option value="8">8-Thotakal</option>
+                    <option value="Goat">Goat</option>
+                    <option value="Retro">Retro</option>
+                    <option selected value="Sirai">Sirai</option>
+                </select>
             </div>
             <div>
-                <input type="checkbox" name="box" id="box" required>
-                <label for="box">Provided details are correct<br><br></label>
+                <p>Scan here for making payment</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.ZFt9Ib6ypFgdYK14UxUAhwHaHa?pid=Api&P=0&h=180">
             </div>
             <div>
-                <label for="file">Upload your resume<br></label>
+                <br><label for="file">Upload your Payment screenshot<br></label>
                 <input type="file" name="file" id="file" accept=".pdf,.docx" required>
             </div><br>
             </div>
                 <button type="submit">SUBMIT</button>
                 <button type="reset">RESET</button>
                 <button type="button">CLICK HERE</button>
+            </div>
+            </div>
         </form>
     </body>
 </html>
