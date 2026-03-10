@@ -6,6 +6,22 @@
 <head>
     <title>KTT Website</title> <!--Title that appears in browser tab-->
     <link rel="icon" href="images/Favicon.jpg"> <!--Favicon for the website-->
+    <style>
+        .blue-text {
+            color: rgb(40, 40, 223);
+        }
+        .aqua-bg {
+            background-color: aqua;
+        }
+        .centered-arial {
+            font-size: 20px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .blue-price {
+            color: blue;
+        }
+    </style>
 </head>
 
 <body> <!--Content of the page-->
@@ -42,9 +58,9 @@
     <br>
     <a href="page.html" target="_blank">Product image</a> <!--Hyperlink to another page in the same website-->
     <hr>
-    <p style="color:rgb(40, 40, 223)">The color of the text is blue.</p>
-    <p style="background-color: aqua;">Backgroud colour given for the text</p>
-    <p style="font-size: 20px; font-family: Arial, sans-serif; text-align: center;">KT Telematic solution pvt ltd</p>
+    <p class="blue-text">The color of the text is blue.</p>
+    <p class="aqua-bg">Backgroud colour given for the text</p>
+    <p class="centered-arial">KT Telematic solution pvt ltd</p>
     <!--HTML QUOTATIONS-->
     <br>
     <p><q>KTT is a leading provider of fleet management</q> solutions for transportation companies.</p>
@@ -67,49 +83,50 @@
     <br>
     <table border="2"> <!--Table with border-->
         <caption>Vehicle Information Table </caption>
-        <tr>
-            <th colspan="2">Vehicle Info</th> <!--Table header spanning two columns-->
-        </tr>
-        <tr>
-            <th>Vehicle</th>
-            <th>Status</th>
-        </tr>
-        <tr>
-            <td>Truck 1</td>
-            <td>Active</td>
-        </tr>
-        <tr>
-            <td>Truck 2</td>
-            <td>Inactive</td>
-        </tr>
+        <thead>
+            <tr>
+                <th colspan="2" scope="col">Vehicle Info</th> <!--Table header spanning two columns-->
+            </tr>
+            <tr>
+                <th scope="col">Vehicle</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Truck 1</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>Truck 2</td>
+                <td>Inactive</td>
+            </tr>
+        </tbody>
     </table>
     <!--<th rowspan="2">Info</th>--> <!--Table header spanning two rows-->
     <br>
     <p>List of features</p>
-    <li>
-        <ol type="I"> <!--Ordered list with Roman numerals-->
-            <li>Vehicle Information</li>
-            <li>Fleet Management</li>
-            <li>GPS Tracking</li>
-        </ol>
-        <ul type="disc"> <!--Unordered list with disc bullets-->
-            <li>Real-time tracking</li>
-            <li>Maintenance scheduling</li>
-            <li>Fuel management</li>
-        </ul>
-        <dl> <!--Definition list-->
-            <dt>GPS <!--Definition term-->
-            <dd>Global Positioning System tracking capabilities</dd> <!--Definition description-->
-            </dt>
-        </dl>
-    </li>
+    <ol type="I"> <!--Ordered list with Roman numerals-->
+        <li>Vehicle Information</li>
+        <li>Fleet Management</li>
+        <li>GPS Tracking</li>
+    </ol>
+    <ul class="disc-list"> <!--Unordered list with disc bullets-->
+        <li>Real-time tracking</li>
+        <li>Maintenance scheduling</li>
+        <li>Fuel management</li>
+    </ul>
+    <dl> <!--Definition list-->
+        <dt>GPS</dt> <!--Definition term-->
+        <dd>Global Positioning System tracking capabilities</dd> <!--Definition description-->
+    </dl>
     <hr>
     <div> <!--Block element-->
         <h2>Mobile Phone</h2>
         <p>Sample image of a Mobile Phone</p>
     </div>
     <p>
-        Price : <span style="color:blue;">₹4400</span> <!--Inline element with style-->
+        Price : <span class="blue-price">₹4400</span> <!--Inline element with style-->
     </p>
 </body>
 

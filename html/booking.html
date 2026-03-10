@@ -10,7 +10,7 @@
     <body class="book">
         <nav>
             <div class="h1">
-            <h1 id="you" style="color: #dcc063; margin-top: 15px;">M4You</h1>
+            <h1 id="you">M4You</h1>
             <a href="movie.html" class="h3"><h2>Home</h2></a>
             <a href="upcoming.html" class="h3"><h2>Movies</h2></a>
             <a href="theatres.html" class="h3"><h2>Theatres</h2></a>
@@ -27,7 +27,7 @@
             </div>
             <div>
                 <label for="Password">Password<br></label>
-                <input type="password" name="Password" id="Password" placeholder="Enter your password" required minlength="6"><br><br>
+                <input type="password" name="Password" id="Password" placeholder="Enter your password" required minlength="6" autocomplete="current-password"><br><br>
             </div>
             <div>
                 <label for="dob">Date of Birth<br></label>
@@ -59,7 +59,7 @@
             </div>
             <div>
                 <label for="ticket">Number of tickets<br></label>
-                <input type="number" name="ticket" id="ticket" required maxlength="3"><br><br>
+                <input type="number" name="ticket" id="ticket" required max="999"><br><br>
             </div>
             <div>
                 <label for="mname">Choose Movie </label>
@@ -72,18 +72,17 @@
             </div>
             <div>
                 <p>Scan here for making payment</p>
-                <img src="https://tse4.mm.bing.net/th/id/OIP.ZFt9Ib6ypFgdYK14UxUAhwHaHa?pid=Api&P=0&h=180">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.ZFt9Ib6ypFgdYK14UxUAhwHaHa?pid=Api&P=0&h=180" alt="QR code for payment">
             </div>
             <div>
                 <br><label for="file">Upload your Payment screenshot<br></label>
                 <input type="file" name="file" id="file" accept=".pdf,.docx" required>
             </div><br>
-            </div>
-                <button type="submit">SUBMIT</button>
-                <button type="reset">RESET</button>
-                <button type="button">CLICK HERE</button>
-            </div>
+            <button type="submit">SUBMIT</button>
+            <button type="reset">RESET</button>
+            <button type="button">CLICK HERE</button>
             </div>
         </form>
+        </div>
     </body>
 </html>
