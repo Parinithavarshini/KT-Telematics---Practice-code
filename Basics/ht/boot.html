@@ -6,8 +6,16 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
         <title>Bootstrap</title>
         <link rel="stylesheet" href="../cas/classid.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     </head>
     <body class="bg-dark">
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#">MySite
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.hXWwNOQw15ZVWKlMs-xv0wHaFQ?pid=Api&P=0&h=180" height="35px" width="35px">
+                </a>
+            </div>
+        </nav>
         <div class="container-fluid bg-success">
             <h2 class="text-light text-center mt-5">Vehicle Details</h2>
             <table class="table table-striped table-bordered border-success table-hover mt-3 mb-3">
@@ -142,7 +150,9 @@
                     <input type="email" class="form-control" id="float">
                     <label for="float">Email address</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" title="Press this button to submit" class="btn btn-primary">Submit</button> <!--Tooltip-->
+                <button type="reset" title="Reset your details" class="btn btn-primary">Reset</button>
+                <button type="button" class="btn btn-primary">Apply</button>
             </form>
         </div><br>
         <div class="alert alert-success alert-dismissible fade show"><!--Alert message-->
@@ -178,7 +188,43 @@
                     <img src="https://tse1.mm.bing.net/th/id/OIP.0WSwZk0xz4jmE-WGeaBjzwHaEL?pid=Api&P=0&h=180" class="d-block w-100" alt="img">
                 </div>
             </div>
+        </div><br>
+        <div class="progress">
+            <div class="progress-bar" style="width:70%;">70%</div>
+        </div><br>
+        <div class="spinner-border text-primary"></div>
+        <div class="spinner-border text-danger"></div>
+        <div class="toast show">
+            <div class="toast-body">
+                Data sent successfully!
+            </div>
         </div>
+        <ul class="list-group">
+            <li class="list-group-item active">Home</li>
+            <li class="list-group-item">About</li>
+            <li class="list-group-item">Services</li>
+            <li class="list-group-item">Contact</li>
+        </ul><br>
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">Home Page</a>
+            <a href="#" class="list-group-item list-group-item-action active">Menu Page</a>
+            <a href="#" class="list-group-item list-group-item-action">Profile Page</a>
+        </div>
+        <i class="bi bi-alarm text-bg-light fs-1"></i>
+        <i class="bi bi-house text-bg-light fs-2"></i>
+        <i class="bi bi-search text-bg-light fs-1"></i>
+        <i class="bi bi-person text-bg-light fs-2"></i>
+        <i class="bi bi-heart text-bg-danger fs-4"></i><br>
+        <i class="bi bi-star text-bg-light fs-1"></i>
+        <i class="bi bi-star text-bg-light fs-2"></i>
+        <i class="bi bi-star text-bg-light fs-3"></i>
+        <i class="bi bi-star text-bg-light fs-4"></i><br>
+        <i class="bi bi-list text-bg-light fs-1"></i><br>
+        <i class="bi bi-people text-bg-light fs-1"></i>
+        <i class="bi bi-pencil text-bg-light fs-1"></i>
+        <i class="bi bi-brush text-bg-light fs-1"></i><br>
+        <i class="bi bi-download text-bg-light fs-1"></i>
+        <i class="bi bi-upload text-bg-light fs-1"></i>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>

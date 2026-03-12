@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+        <title>College Fest</title>
+    </head>
+    <body class="bg-light mt-5">
+        <div class="container border border-black-subtle p-0">
+            <div class="container border bg-primary d-flex">
+                <h4 class="text-light mt-3 m-3 mb-3"><b>College Fest</b></h4>
+                <p class="text-light mt-3 ms-5 mb-3 fs-5">Home</p>
+                <p class="text-light mt-3 ms-5 mb-3 fs-5">Events</p>
+                <p class="text-light mt-3 ms-5 mb-3 fs-5">Register</p>
+            </div>
+            <div class="container bg-light text-dark">
+            <h3 class="text-black text-center mt-3">EVENT REGISTRATION FORM</h3>
+            <form action="bootstrap.html" method="get">
+                <label for="form-control"><b>Username</b></label>
+                <input type="text" class="form-control" placeholder="Username" required><br>
+                <label for="form-control"><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="Password" autocomplete="current-password" required><br>
+                <label for="form-control"><b>Upload your ID Card</b></label>
+                <input type="file" class="form-control"><br>
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="float">
+                    <label for="float"><b>Email address</b></label>
+                </div>
+                <label for="form-control"><b>About You</b></label>
+                <textarea class="form-control" rows="4"></textarea><br>
+                <label for="form-select"><b>Select event</b></label>
+                <select class="form-select">
+                    <option value="0" selected>Singing</option>
+                    <option value="1">Dancing</option>
+                    <option value="2">Mono act</option>
+                </select><br>
+                <div>
+                    <label class="form-label"><b>Select Gender</b></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="male">
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                        <input class="form-check-input" type="radio" name="gender" id="female">
+                        <label class="form-check-label" for="female">Female</label>
+                </div><br>
+                <label class="form-label"><b>Which events do you want to participate in?</b></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check1">
+                    <label class="form-check-label" for="check1">Singing</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check2">
+                    <label class="form-check-label" for="check2">Mono act</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="check3">
+                    <label class="form-check-label" for="check3">Dancing</label>
+                </div>
+                <div class="text-center mt-4 mb-4">
+                    <button type="submit" title="Press this button to submit" class="btn btn-success">Submit</button> <!--Tooltip-->
+                <button type="reset" title="Reset your details" class="btn btn-success">Reset</button>
+                <button type="button" class="btn btn-success">Apply</button>
+                </div>
+            </form>
+        </div>
+        </div>
+        <div class="alert alert-success container w-50 text-center fs-3">Registration completed successfully!</div>
+        <div class="container border bg-dark text-light d-flex flex-column">
+            <div class="text-center fs-5 mt-3">Contact us : info@collegefest.com</div>
+            <div class="text-center fs-5">
+                Follow us :
+                <i class="bi bi-instagram ms-2"></i>
+                <i class="bi bi-twitter ms-2"></i>
+                <i class="bi bi-facebook ms-2"></i>
+                <i class="bi bi-linkedin ms-2"></i>
+            </div>
+            <div class="text-center fs-5 mb-3">&copy; 2026 College Fest. All rights reserved.</div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
