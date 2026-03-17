@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Registration form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="icon" href="../images/Favicon.jpg">
+   </head>
+   <body>
+    <h3>HOSPITAL PATIENT REGISTRATION FORM</h3>
+      <form action="movie.html" method="get" target="_self" accept-charset="UTF-8" enctype="multipart/form-data">  <!--novalidate-skips browser validation-->
+         <fieldset>
+            <legend>Personal Details</legend>
+               <div>
+               <label for="fname">First name</label>
+               <input type="text" id="fname" name="fname" required autofocus>
+               <label for="mname">Middle Name</label>
+               <input type="text" id="mname" name="mname" placeholder="Not required" readonly>
+               <label for="lname">Last name</label>
+               <input type="text" id="lname" name="lname" required>
+               </div><br>
+               <div>
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" required pattern="[0-9A-Z]{6}" autocomplete="current-password"><br>
+                  <meter value="70" min="0" max="100"></meter>
+               </div>
+               <div><br>
+                  <label for="dob">Enter your DOB</label>
+                  <input type="date" id="dob" name="dob" required min="1900-01-01" max="3000-01-01">
+               </div>
+               <br>
+               <div>
+                  <label for="cdate">Enter current date and time</label>
+                  <input type="datetime-local" id="cdate" name="cdate">
+               </div>
+               <div><br>
+                  <label for="regtime">Registartion Time</label>
+                  <input type="time" id="regtime" name="regtime">
+               </div>
+               <div><br>
+                  <label for="month">Month of Registartion</label>
+                  <input type="month" id="month" name="month">
+               </div>
+               <div><br>
+                  <label for="week">Week of the year</label>
+                  <input type="week" id="week" name="week">
+               </div>
+         </fieldset>
+         <fieldset>
+         <legend>Medical Records</legend>
+         <input type="hidden" name="PatientID" value="765">
+         <div>
+            <label for="gender">Select you gender</label><br>
+            <input type="radio" name="gender" id="male" value="male" checked>
+            <label for="male">Male</label><br>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" name="gender" id="other" value="other">
+            <label for="other">Other</label>
+         </div><br>
+         <div>
+            <label for="email">Enter your email</label>
+            <input type="email" id="email" name="email" required placeholder="Eg : xyz@gmail.com" autocomplete="email" style="cursor: pointer;">
+         </div><br>
+         <div>
+            <label for="bgroup">Blood Group</label>
+            <select name="bgroup" id="bgroup" multiple size="4">
+                <optgroup label="Positive">
+                    <option value="">Select group</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="O+" selected>O+</option>
+                    <option value="AB+">AB+</option>
+                </optgroup>
+                <optgroup label="Negative">
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="O-">O-</option>
+                    <option value="AB-">AB-</option>
+                </optgroup>
+            </select>
+         </div><br>
+         <div>
+            <label for="visit">Prefered visting hours</label>
+            <select name="visit" id="visit">
+                <option value="" disabled selected>Visiting hours</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+         </div><br>
+         <div>
+            <label for="allergy">Known Alergies</label><br>
+            <input type="checkbox" name="check1" id="check1" value="Dust">
+            <label for="check1">Dust</label>
+            <input type="checkbox" name="check2" id="check2" value="Pollen">
+            <label for="check2">Pollen</label>
+            <input type="checkbox" name="check3" id="check3" value="Medication">
+            <label for="check3">Medication</label>
+            <input type="checkbox" name="check4" id="check4" checked value="Food">
+            <label for="check4">Food</label>
+         </div><br>
+         <div>
+            <label for="browser">Browser preference for Portal</label>
+            <input type="text" list="browsers" name="browser" id="browser">
+                <datalist id="browsers">
+                    <option value="Safari"></option>
+                    <option value="Chrome"></option>
+                    <option value="Edge"></option>
+                </datalist>
+         </div>
+         </fieldset>
+         <fieldset>
+            <legend>Billing Department</legend>
+            <div>
+                <label for="region">Region and state</label>
+                <select name="region" id="region">
+                    <optgroup label="South">
+                        <option value="Tamilnadu">Tamil Nadu</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Karnataka">Karnataka</option>
+                    </optgroup>
+                    <optgroup label="North">
+                        <option value="Haryana">Haryana</option>
+                        <option value="Delhi" selected>Delhi</option>
+                        <option value="Assam">Assam</option>
+                    </optgroup>
+                </select>
+            </div><br>
+            <div>
+                <label for="phone">Mobile Number</label>
+                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Eg: 93123 98873">
+            </div><br>
+            <div>
+                <label for="ccode">Country Code</label>
+                <input type="text" id="ccode" name="ccode" pattern="[A-Za-z]{3}" placeholder="Format : IND">
+            </div><br>
+            <div>
+                <label for="url">Enter Github Link</label>
+                <input type="url" id="url" name="url">
+            </div><br>
+            <div>
+                <label for="text">Meidcal History</label>
+                <textarea id="text" name="text" rows="3" cols="25" placeholder="Enter the medical history here" autofocus></textarea>
+            </div><br>
+            <div>
+                <label for="color">Favourite color for ID Cad</label>
+                <input type="color" name="color" id="color">
+            </div><br>
+            <div>
+                <label>Click this image to submit the form</label><br>
+                <input type="image" src="../images/Favicon.jpg" alt="image" height="50px" width="50px" disabled>
+            </div><br>
+         </fieldset>
+         <fieldset>
+            <legend>Documents</legend>
+            <div>
+                <label for="file">Upload your photo</label><br>
+                <input type="file" id="file" name="file" accept=".jpg,.png" multiple>   <!--image/* - to upload only images-->
+            </div><br>
+            <div>
+                <label for="visitnum">Number of previous visits</label>
+                <input type="number" id="visitnum" name="visitnum" step="1" value="1" oninput="if(this.value>10) this.value=10">
+            </div><br>
+            <div>
+                <label for="pain">Pain level</label>
+                <input type="range" name="pain" id="pain" min="0" max="100" value="30">
+            </div><br>
+            <div>
+                <label for="search">Search Here</label>
+                <input type="search" name="search" id="search">
+            </div><br>
+            <div>
+                <label>Form completion status</label>
+                <progress value="50" min="0" max="100"></progress><br>
+            </div>
+         </fieldset><br>
+         <button type="submit">SUBMIT</button>
+         <button type="reset" >RESET</button>
+         <button type="button">Verifying...</button>
+      </form>
+   </body>
+</html>
