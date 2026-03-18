@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Registration form</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link rel="icon" href="../images/Favicon.jpg">
+      <style>
+        .t1 th{
+            background-color: bisque;
+            border-radius: 3px;
+            border-style: double;
+        }
+        .t1 td{
+            background-color: rgb(229, 242, 249);
+            border-style: double;
+        }
+        .t1{
+        text-align: center;
+        padding: 2px;
+        border-spacing: 5px;
+        }
+        .t4 td:nth-child(odd){
+            background-color: bisque;
+        }
+        .t4 td:nth-child(even){
+            background-color: rgb(175, 240, 245);
+        }
+        .t4 th:nth-child(odd){
+            background-color: bisque;
+        }
+        .t4 th:nth-child(even){
+            background-color: bisque;
+        }
+        .t2 th{
+            background-color: bisque;
+        }
+        .day{
+            background-color: rgb(204, 237, 237);
+        }
+      </style>
+    </head>
+    <body>
+        <table border="1" class="t1">
+            <caption>Records of Employess</caption>
+            <thead style="background-color: rgb(219, 219, 245);">
+                <tr>
+                    <th style="height: 30px;" colspan="4">New Employee records</th>
+                </tr>
+                <tr>
+                    <th style="width: 20%;">Name</th>
+                    <th style="width: 50%;"colspan="2">Jobs</th>
+                    <th style="width: 20%;">Working Experience</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: rgb(233, 227, 192);">
+                <tr>
+                    <td>John</td>
+                    <td>Software Engineer</td>
+                    <td>Data Analyst</td>
+                    <td rowspan="2">5 years</td>
+                </tr>
+                <tr>
+                    <td>Ale</td>
+                    <td colspan="2">Senior web developer</td>
+                </tr>
+                <tr>
+                    <td>Jack</td>
+                    <td>Junior Tech Writer</td>
+                    <td>Blogger</td>
+                    <td>6 months</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>5 years 6 months</td>
+                </tr>
+            </tfoot>
+        </table><br>
+        <table border="1" class="t2">
+            <caption>Schedule - Seminar</caption>
+            <thead>
+                <tr>
+                    <th rowspan="3">Day</th>
+                    <th colspan="3">Seminar</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Schedule</th>
+                    <th rowspan="2">Topic</th>
+                </tr>
+                <tr>
+                    <th>Begin</th>
+                    <th>End</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2" class="day">Monday</td>
+                    <td rowspan="2">8:00 a.m.</td>
+                    <td rowspan="2">5:00 p.m.</td>
+                    <td>Introduction to XML</td>
+                </tr>
+                <tr>
+                    <td>Validity: DTD and Relax NG</td>
+                </tr>
+                <tr>
+                    <td rowspan="4" class="day">Tuesday</td>
+                    <td>8:00 am</td>
+                    <td>5:00 am</td>
+                    <td rowspan="2">XPath</td>
+                </tr>
+                <tr>
+                    <td>8:00 am</td>
+                    <td>5:00 am</td>
+                </tr>
+                <tr>
+                    <td>8:00 a.m.</td>
+                    <td>12:00 p.m.</td>
+                    <td rowspan="2">XSL Transformations</td>
+                </tr>
+                <tr>
+                    <td>8:00 a.m.</td>
+                    <td>12:00 p.m.</td>
+                </tr>
+                <tr>
+                    <td class="day">Wednesday</td>
+                    <td>8:00 a.m.</td>
+                    <td>12:00 p.m.</td>
+                    <td>XSL Formatting Objects</td>
+                </tr>
+            </tbody>
+        </table><br />
+        <table border="3" style="border-collapse: collapse; width: 100%; text-align: center;">
+            <caption>Performance Metrics</caption>
+            <thead>
+                <tr>
+                    <td rowspan="2">Sr.No</td>
+                    <td rowspan="2">Details of the Services Provided</td>
+                    <td rowspan="2">Qty</td>
+                    <td colspan="2">Service Period</td>
+                    <td colspan="4">Service Performance Details</td>
+                </tr>
+                <tr>
+                    <td>From</td>
+                    <td>To</td>
+                    <td>S.No</td>
+                    <td>Service ID No:</td>
+                    <td>Gap in Service(in days)</td>
+                    <td>Overall Performance Remarks(Satisfactory/unsatisfactory)</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">1</td>
+                    <td rowspan="3"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">2</td>
+                    <td rowspan="3"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>2</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table><br>
+        <table border="1" style="width: 50%; text-align: center;" class="t4">
+            <tr>
+                <th>Name</th>
+                <th>Emp id</th>
+                <th>DOJ</th>
+                <th>Place</th>
+            </tr>
+            <tr>
+                <td>Kavya</td>
+                <td>234</td>
+                <td>13.09.2020</td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td>Kalai</td>
+                <td>235</td>
+                <td>14.09.2020</td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td>Mani</td>
+                <td>236</td>
+                <td>15.09.2020</td>
+                <td>Chennai</td>
+            </tr>
+            <tr>
+                <td>Keerthi</td>
+                <td>237</td>
+                <td>16.09.2020</td>
+                <td>Chennai</td>
+            </tr>
+        </table>
+        <h4>List and its types</h4>
+        <ol type="A">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ol>
+        <ol type="1">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ol>
+        <ol type="i">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ol>
+        <ol type="a">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ol>
+        <ol type="I">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ol>
+        <ul type="disc">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ul>
+        <ul type="circle">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ul>
+        <ul type="square">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Javascript</li>
+        </ul>
+        <dl>
+            <dt>GPS</dt>
+            <dd>Gloabl Positioning System</dd>
+            <dt>LAN</dt>
+            <dd>Local area network</dd>
+        </dl>
+        <ol>
+            <li>India
+                <ul>
+                    <li>Tamilnadu</li>
+                    <li>Kerala</li>
+                </ul>
+            </li>
+        </ol>
+    </body>
+</html>

@@ -13,7 +13,7 @@
             <legend>Personal Details</legend>
                <div>
                <label for="fname">First name</label>
-               <input type="text" id="fname" name="fname" required autofocus>
+               <input type="text" id="fname" name="fname" required autofocus autocomplete="on">
                <label for="mname">Middle Name</label>
                <input type="text" id="mname" name="mname" placeholder="Not required" readonly>
                <label for="lname">Last name</label>
@@ -26,7 +26,7 @@
                </div>
                <div><br>
                   <label for="dob">Enter your DOB</label>
-                  <input type="date" id="dob" name="dob" required min="1900-01-01" max="3000-01-01">
+                  <input type="date" id="dob" name="dob" required min="1900/01/01" max="3000/01/01">
                </div>
                <br>
                <div>
@@ -102,7 +102,7 @@
          </div><br>
          <div>
             <label for="browser">Browser preference for Portal</label>
-            <input type="text" list="browsers" name="browser" id="browser">
+            <input type="text" list="browsers" name="browser" id="browser" onblur="this.readonly=true">
                 <datalist id="browsers">
                     <option value="Safari"></option>
                     <option value="Chrome"></option>
@@ -129,7 +129,7 @@
             </div><br>
             <div>
                 <label for="phone">Mobile Number</label>
-                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Eg: 93123 98873">
+                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Eg: +91 9312398873">
             </div><br>
             <div>
                 <label for="ccode">Country Code</label>
@@ -156,7 +156,7 @@
             <legend>Documents</legend>
             <div>
                 <label for="file">Upload your photo</label><br>
-                <input type="file" id="file" name="file" accept=".jpg,.png" multiple>   <!--image/* - to upload only images-->
+                <input type="file" id="file" name="file" accept="image/*" multiple>   <!--image/* - to upload only images-->
             </div><br>
             <div>
                 <label for="visitnum">Number of previous visits</label>
@@ -178,6 +178,6 @@
          <button type="submit">SUBMIT</button>
          <button type="reset" >RESET</button>
          <button type="button">Verifying...</button>
-      </form>
+      </form><br>
    </body>
 </html>
