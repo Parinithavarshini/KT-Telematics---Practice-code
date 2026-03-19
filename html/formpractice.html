@@ -5,11 +5,22 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <link rel="icon" href="../images/Favicon.jpg">
+      <style>
+        .data{
+            background-color: bisque;
+        }
+        input,textarea,select{
+            background-color: rgb(252, 252, 252);
+        }
+        input:hover{
+            background-color: bisque;
+        }
+      </style>
    </head>
    <body>
-    <h3>HOSPITAL PATIENT REGISTRATION FORM</h3>
+    <h3 style="text-align: center;">HOSPITAL PATIENT REGISTRATION FORM</h3>
       <form action="movie.html" method="get" target="_self" accept-charset="UTF-8" enctype="multipart/form-data">  <!--novalidate-skips browser validation-->
-         <fieldset>
+         <fieldset class="data">
             <legend>Personal Details</legend>
                <div>
                <label for="fname">First name</label>
@@ -46,7 +57,7 @@
                   <input type="week" id="week" name="week">
                </div>
          </fieldset>
-         <fieldset>
+         <fieldset class="data">
          <legend>Medical Records</legend>
          <input type="hidden" name="PatientID" value="765">
          <div>
@@ -110,7 +121,7 @@
                 </datalist>
          </div>
          </fieldset>
-         <fieldset>
+         <fieldset class="data">
             <legend>Billing Department</legend>
             <div>
                 <label for="region">Region and state</label>
@@ -152,7 +163,7 @@
                 <input type="image" src="../images/Favicon.jpg" alt="image" height="50px" width="50px" disabled>
             </div><br>
          </fieldset>
-         <fieldset>
+         <fieldset class="data">
             <legend>Documents</legend>
             <div>
                 <label for="file">Upload your photo</label><br>
