@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .frame{
+            display: flex;
+        }
+        .two{
+            margin-left: 550px;
+            height: 300px;
+            width: 300px;
+            border-color: black;
+        }
+        h2:hover{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+    <h2 style="color: orangered; margin-left: 250px;">Learn web Development</h2>
+    <div class="frame">
+        <div class="one">
+            <iframe  src="../media/videoplayback.mp4" height="600px" width="250%" style="align-items: center; border-color: antiquewhite;box-shadow: 4px 7px 7px white;"></iframe>
+        </div>
+         <div class="two">
+            <form action="#" method="get">
+            <div class="form">
+            <fieldset style="border-color: rgb(254, 254, 254); background-color: black; color: orangered; width: 500px; box-shadow: 4px 7px 7px white; margin-bottom: 10px;">
+            <h2>Register for the course</h2>
+            <div>
+                <label for="Username">Username<br></label>
+                <input type="text" name="Username" id="Username" placeholder="Enter your name" required><br><br>
+            </div>
+            <div>
+                <label for="Password">Password<br></label>
+                <input type="password" name="Password" id="Password" placeholder="Enter your password" required minlength="6" autocomplete="current-password"><br><br>
+            </div>
+            <div>
+                <label for="Age">Age<br></label>
+                <input type="number" name="Age" id="Age" step="1" min="18" max="65" value="10" oninput="if(this.value>90) this.value=90"><br><br>
+            </div>
+            <div>
+                <label for="dob">Date of Birth<br></label>
+                <input type="date" name="dob" id="dob" required><br><br>
+            </div>
+            <div>
+                <label for="skill">Choose your skills</label>
+                <select name="skill" id="skill" required multiple>
+                    <optgroup label="Frontend">
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                        <option selected value="Javascript">Javascript</option>
+                        <option value="React">React</option>
+                    </optgroup>
+                    <optgroup label="Backend">
+                        <option value="Node.js">Node.js</option>
+                        <option value="Express.js">Express.js</option>
+                        <option selected value="Python">Python</option>
+                    </optgroup>
+                    <optgroup label="Database">
+                        <option value="MySQL">MySQL</option>
+                        <option value="MongoDB">MongoDB</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div>
+                <p>Select your gender</p>
+                <input type="radio" name="gender" id="male" value="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="female">
+                <label for="female">Female<br><br></label>
+            </div>
+            <div>
+                <label for="mail">Enter your email<br></label>
+                <input type="email" name="mail" id="mail" required placeholder="Eg:xyz@gmail.com"><br><br>
+            </div>
+            <div>
+                <label for="phone">Phone number<br></label>
+                <input type="tel" name="phone" id="phone" required maxlength="10"><br><br>
+            </div>
+            <div>
+                <label for="month">Choose learning period </label>
+                <select name="month" id="month" required>
+                    <option value="1 month" selected>1 month</option>
+                    <option value="3 months">3 months</option>
+                    <option value="6 months">6 months</option>
+                    <option value="9 months">9 months</option>
+                </select>
+            </div>
+            <div>
+                <p>Scan here for making initial payment</p>
+                <img src="https://tse4.mm.bing.net/th/id/OIP.ZFt9Ib6ypFgdYK14UxUAhwHaHa?pid=Api&P=0&h=180" alt="QR code for payment">
+            </div>
+            <div>
+                <br><label for="file">Upload your Resume<br></label>
+                <input type="file" name="file" id="file" accept=".pdf,.docx,.xlx" required>
+            </div><br>
+            <button type="submit">SUBMIT</button>
+            <button type="reset">RESET</button>
+            <button type="button">CLICK HERE</button>
+            </fieldset>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>

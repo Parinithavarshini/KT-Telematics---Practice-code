@@ -7,26 +7,41 @@
       <link rel="icon" href="../images/Favicon.jpg">
       <style>
         .data{
-            background-color: bisque;
+            background-color: rgb(222, 235, 249);
         }
         input,textarea,select{
             background-color: rgb(252, 252, 252);
         }
         input:hover{
-            background-color: bisque;
+            background-color: rgb(225, 235, 249);
+        }
+        .form{
+            display: grid;
+            grid-template-columns:repeat(1,1fr 2fr);
+            justify-content: center;
+            gap:15px;
+        }
+        .buttons{
+            display:grid;
+            grid-template-columns: 100px 100px 100px;
+            gap: 5px;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
         }
       </style>
    </head>
    <body>
-    <h3 style="text-align: center;">HOSPITAL PATIENT REGISTRATION FORM</h3>
+    <h2 style="text-align: center;">HOSPITAL PATIENT REGISTRATION FORM</h2>
       <form action="movie.html" method="get" target="_self" accept-charset="UTF-8" enctype="multipart/form-data">  <!--novalidate-skips browser validation-->
+        <div class="form">
          <fieldset class="data">
             <legend>Personal Details</legend>
                <div>
                <label for="fname">First name</label>
-               <input type="text" id="fname" name="fname" required autofocus autocomplete="on">
+               <input type="text" id="fname" name="fname" autocomplete="on">
                <label for="mname">Middle Name</label>
-               <input type="text" id="mname" name="mname" placeholder="Not required" readonly>
+               <input type="text" id="mname" name="mname" placeholder="Not required" readonly><br><br>
                <label for="lname">Last name</label>
                <input type="text" id="lname" name="lname" required>
                </div><br>
@@ -62,7 +77,7 @@
          <input type="hidden" name="PatientID" value="765">
          <div>
             <label for="gender">Select you gender</label><br>
-            <input type="radio" name="gender" id="male" value="male" checked>
+            <input type="radio" name="gender" id="male" value="male">
             <label for="male">Male</label><br>
             <input type="radio" name="gender" id="female" value="female">
             <label for="female">Female</label><br>
@@ -108,7 +123,7 @@
             <label for="check2">Pollen</label>
             <input type="checkbox" name="check3" id="check3" value="Medication">
             <label for="check3">Medication</label>
-            <input type="checkbox" name="check4" id="check4" checked value="Food">
+            <input type="checkbox" name="check4" id="check4" value="Food">
             <label for="check4">Food</label>
          </div><br>
          <div>
@@ -186,9 +201,15 @@
                 <progress value="50" min="0" max="100"></progress><br>
             </div>
          </fieldset><br>
-         <button type="submit">SUBMIT</button>
-         <button type="reset" >RESET</button>
-         <button type="button">Verifying...</button>
+         </div>
+         <div class="buttons">
+         <button type="submit" style="background-color: rgb(76, 234, 76);">SUBMIT</button>
+         <button type="reset" style="background-color: rgb(247, 200, 118);">RESET</button>
+         <button type="button" style="background-color: grey;">Verifying...</button>
+         <p>Click above button to submit the form.</p>
+         <p>Click here to reset the data.</p>
+         <p>Data is being verified.</p>
+         </div>
       </form><br>
    </body>
 </html>
