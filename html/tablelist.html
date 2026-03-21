@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-      <title>Registration form</title>
+      <title>Table and list</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <link rel="icon" href="../images/Favicon.jpg">
@@ -48,9 +48,9 @@
                     <th style="height: 30px;" colspan="4">New Employee records</th>
                 </tr>
                 <tr>
-                    <th style="width: 20%;">Name</th>
-                    <th style="width: 50%;"colspan="2">Jobs</th>
-                    <th style="width: 20%;">Working Experience</th>
+                    <th>Name</th>
+                    <th colspan="2">Jobs</th>
+                    <th >Working Experience</th>
                 </tr>
             </thead>
             <tbody style="background-color: rgb(233, 227, 192);">
@@ -243,6 +243,37 @@
                 <td>Chennai</td>
             </tr>
         </table>
+        <table border="1">
+            <caption>Football Scores</caption>
+            <tr>
+                <th colspan="2">Home Team</th>
+                <th colspan="2">Away Team</th>
+            </tr>
+            <tr>
+                <td>Arsenal</td>
+                <td>2</td>
+                <td>Leeds</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Derby</td>
+                <td>1</td>
+                <td>Everton</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Liverpool</td>
+                <td>0</td>
+                <td>Sunderland</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Newscastle</td>
+                <td>1</td>
+                <td>Man Utd</td>
+                <td>2</td>
+            </tr>
+        </table>
         <h4>List and its types</h4>
         <ol type="A">
             <li>HTML</li>
@@ -312,6 +343,16 @@
         <blockquote>Data is sent</blockquote>
         <abbr title="Global positioning System">GPS</abbr>
         <p><cite>Harry Potter</cite> is a famous book</p>
-        <a href="tel:934427890" title="mobile number">Call now</a>
+        <a href="tel:934427890" title="mobile number">Call now</a><br>
+        <canvas id="box" width="300px" height="60px" style="border:1px solid black"></canvas><br>
+        <svg style="width: 100px; height: 200px; border: 1px solid black">
+            <rect x="10" y="10" height="30" width="30" fill="black"></rect>
+            <circle cx="25" cy="70" r="20" fill="black"></circle>
+            <ellipse cx="45" cy="120" rx="40" ry="20" fill="black"></ellipse>
+            <line x1="20" y1="150" x2="150" y2="150" stroke="green" stroke-width="10"></line>
+        </svg><br>
+        <object data="../media/Receipt.pdf" height="300px" width="300px">Download here</object>
+        <object data="../html/contact.html" height="300px" width="300px">Download here</object>
+        <embed src="../media/video.mp4" height="100px" width="100px">
     </body>
 </html>

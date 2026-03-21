@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <title>Registration form</title>
+      <title>Hospital Form</title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width,initial-scale=1.0">
       <link rel="icon" href="../images/Favicon.jpg">
       <style>
         .data{
             background-color: rgb(222, 235, 249);
+            border-radius: 30px;
         }
         input,textarea,select{
             background-color: rgb(252, 252, 252);
@@ -17,17 +18,26 @@
         }
         .form{
             display: grid;
-            grid-template-columns:repeat(1,1fr 2fr);
+            grid-template-columns:repeat(1,1fr 1fr);
             justify-content: center;
             gap:15px;
+            border-radius: 30px;
         }
         .buttons{
             display:grid;
-            grid-template-columns: 100px 100px 100px;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 5px;
             justify-content: center;
             text-align: center;
             font-weight: bold;
+        }
+        .one{
+            position:relative;
+        }
+        .one:focus-within::placeholder{
+            position: absolute;
+            margin-top: -10px;
+            color: black;
         }
       </style>
    </head>
@@ -39,7 +49,7 @@
             <legend>Personal Details</legend>
                <div>
                <label for="fname">First name</label>
-               <input type="text" id="fname" name="fname" autocomplete="on">
+               <input type="text" id="fname" name="fname" autocomplete="off" placeholder="Name" class="one" style="padding: 10px;">
                <label for="mname">Middle Name</label>
                <input type="text" id="mname" name="mname" placeholder="Not required" readonly><br><br>
                <label for="lname">Last name</label>
@@ -117,18 +127,18 @@
          </div><br>
          <div>
             <label for="allergy">Known Alergies</label><br>
-            <input type="checkbox" name="check1" id="check1" value="Dust">
+            <input type="checkbox" name="allergy" id="check1" value="Dust">
             <label for="check1">Dust</label>
-            <input type="checkbox" name="check2" id="check2" value="Pollen">
+            <input type="checkbox" name="allergy" id="check2" value="Pollen">
             <label for="check2">Pollen</label>
-            <input type="checkbox" name="check3" id="check3" value="Medication">
+            <input type="checkbox" name="allergy" id="check3" value="Medication">
             <label for="check3">Medication</label>
-            <input type="checkbox" name="check4" id="check4" value="Food">
+            <input type="checkbox" name="allergy" id="check4" value="Food">
             <label for="check4">Food</label>
          </div><br>
          <div>
             <label for="browser">Browser preference for Portal</label>
-            <input type="text" list="browsers" name="browser" id="browser" onblur="this.readonly=true">
+            <input type="text" list="browsers" name="browser" id="browser" onblur="this.readOnly=true">
                 <datalist id="browsers">
                     <option value="Safari"></option>
                     <option value="Chrome"></option>
@@ -148,14 +158,14 @@
                     </optgroup>
                     <optgroup label="North">
                         <option value="Haryana">Haryana</option>
-                        <option value="Delhi" selected>Delhi</option>
+                        <option value="Delhi">Delhi</option>
                         <option value="Assam">Assam</option>
                     </optgroup>
                 </select>
             </div><br>
             <div>
                 <label for="phone">Mobile Number</label>
-                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Eg: +91 9312398873">
+                <input type="tel" id="phone" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="Eg:9312398873">
             </div><br>
             <div>
                 <label for="ccode">Country Code</label>
@@ -190,7 +200,8 @@
             </div><br>
             <div>
                 <label for="pain">Pain level</label>
-                <input type="range" name="pain" id="pain" min="0" max="100" value="30">
+                <input type="range" name="pain" id="pain" min="0" max="100" value="30" oninput="ranges.innerText=this.value">
+                <label id="ranges"></label>
             </div><br>
             <div>
                 <label for="search">Search Here</label>
