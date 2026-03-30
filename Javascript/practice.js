@@ -1,4 +1,4 @@
-"use strict";       //Forces to enter coorect code
+"use strict";       //Forces to enter correct code
 //Single line command
 /*Multi line command*/
 let x=20;    //creating variable
@@ -19,7 +19,7 @@ let b=2.5;  //Decimal
 console.log(a+b);
 
 //2.BigInt   -->greater than 2^53-1
-let bigint=BigInt("12345676543");  //1st way ti declare bigint  2nd-12345678n
+let bigint=BigInt("12345676543");  //1st way to declare bigint  2nd-12345678n
 console.log(typeof bigint);
 
 //3.String
@@ -28,7 +28,7 @@ let str2='kaviya';
 
 let num1=9;
 let num2=9;
-console.log(`Result is ${a+b}`);   //Backticks
+console.log(`Result is ${a+b}`);   
 
 //4.Boolean
 let res=5>2;
@@ -72,7 +72,7 @@ else{
 }
 console.log(uname);
 //confirm
-let ques=confirm("Are you sure?");    //ask confirmation from user  -if user clicks ok tru is returned ,if they click cancel returns false
+let ques=confirm("Are you sure?");    //ask confirmation from user  -if user clicks ok true is returned ,if they click cancel returns false
 console.log(ques);
 
 //Type conversion   - changing one datatype to another
@@ -87,7 +87,7 @@ console.log("hello"/2);  //op:NaN
 if(0){
     console.log("run");
 }
-
+debugger;
 //Operators - 5+2 (5,2)-operand,(+)-operator
 //1.Unary operator - works on one value
 let n1=10;
@@ -149,10 +149,10 @@ console.log(id);
 //Bitwise operator - works on binary 0 and 1
 let bit1=5;
 let bit2=3;
-console.log(bit1&bit2);
-console.log(bit1|bit2);
-console.log(bit1^bit2);
-console.log(~bit1);  //~x=-(x+1)
+console.log(bit1&bit2);   //1
+console.log(bit1|bit2);   //7
+console.log(bit1^bit2);   //6
+console.log(~bit1);  //~x=-(x+1)   //-6
 console.log(bit1>>1); //5/2 if bit>>2 5/4
 console.log(bit1<<2);
 //comparison operators - <,>,<=,>=,==,!=,===,!== returns boolean
@@ -194,6 +194,208 @@ let firstName = null;
 let lastName = null;
 let nickName = "Supercoder";
 console.log(firstName ?? lastName ?? nickName ?? "Anonymous"); // Supercoder
+
+//Loops
+//while
+let int=0;
+while(int<3){
+    console.log(int);
+    int++;
+}
+//do-while
+let count=0;
+do{
+    console.log(count);
+    count++;
+}while(count<4);
+//for loop
+for(let counts=0;counts<4;counts++){
+    if(counts==2) continue;
+    console.log(counts);
+}
+//skip begin
+let c1=2;
+for(;c1<5;c1++){
+    if(c1==4) break;
+    console.log(c1);
+}
+
+let c2=5;
+for(;c2<8;){
+    console.log(c2++);
+}
+//Infinite loop
+/*for(;;){
+    console.log("none");
+}*/
+
+for(let i=1;i<=10;i++){
+    if(i%2==0) continue;
+    if(i==9) break;
+    console.log(i);
+}
+
+//switch
+let a1=5;   
+switch(a1){
+    case 1:
+        console.log("Prints 1");
+        break;                         //without break it continues to next cases
+    case 2:
+        console.log("Prints 2");
+        break;
+    case 3:                             //Grouping
+    case 5:
+        console.log("Prints 3");
+        break;
+    default:
+        console.log("Not found");
+}
+//Expression in switch
+let a2="1";
+let a3=0;
+switch(+a2){
+    case(a3+1):
+        console.log("Match");
+        break;
+    default:
+        console.log("No match");
+}
+//type
+let a4="1";
+let a5=0;
+switch(a4){
+    case(a5+1):
+        console.log("Match");
+        break;
+    default:
+        console.log("No match");
+}
+
+//console methods in JS
+console.assert(5<10,"Wrong");
+
+function f1(){
+    f2();
+}
+function f2(){
+    console.trace();
+}
+f1();
+
+console.error("This is error message");
+console.warn("Warning message");
+
+let students=[
+    {id:1,gender:"male",loc:"erode"},
+    {id:2,gender:"female",loc:"chennai"},
+];
+console.table(students);
+
+console.time("check");
+for(let i=0;i<50;i++){
+    console.log(i);
+}
+console.timeEnd("check");
+
+console.info("Info about js");
+console.count("check");
+
+console.group("User details");
+console.groupCollapsed("Hidden details");
+console.log("Kaviya");
+console.log("KTT");
+console.groupEnd();
+console.groupEnd();
+
+console.dir(document);
+console.dirxml(document.body);
+console.log(console.memory);
+
+//function
+function new1(){
+    console.log("Print 2026");
+}
+new1();
+
+new2("2026");
+function new2(year="2025"){           //default value to a function
+    console.log("Year is "+year);
+}
+
+x=30;
+y=60;
+//local and global variables
+let fname="John";
+function test(){
+    let fname="kala";
+    console.log(fname);
+}
+test();
+console.log(fname);
+
+//return
+function add(a,b){
+    return a+b;
+}
+let result=add(2,3);
+console.log(result);
+
+function add(a, b) {
+  return a + b;
+}
+function sub(a, b) {
+  return a - b;
+}
+function mul(a, b) {
+  return a * b;
+}
+function div(a, b) {
+  return a / b;
+}
+console.log(add(2, 3));       
+console.log(sub(5, 2));  
+console.log(mul(2, 3)); 
+console.log(div(6, 3)); 
+
+//function expression
+let new3=function(){
+    console.log("Function expression");
+};
+new3();
+
+//using function as values
+let new4=function(){
+    console.log("a");
+};
+let new5=new4;
+new5();
+
+//Callback function
+function greeting(name,callback){
+    console.log("Hello "+name);
+    callback();
+}
+function bye(){
+    console.log("Say bye");
+}
+greeting("Kalai",bye);
+
+//Arrow function
+let addition=(a,b)=>a+b;
+console.log(addition(2,6));
+
+let multi=n=>n*2
+console.log(multi(5));
+
+let welcome=()=>console.log("Hello");
+welcome();
+
+let multiply=(a,b)=>{
+    return a*b;
+}
+console.log(multiply(3,4));
+
 
 
 
