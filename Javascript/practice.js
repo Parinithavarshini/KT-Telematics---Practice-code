@@ -9,7 +9,7 @@ console.log(y); //changing value of a variable
 let apple=11;         //case sensitive treat this as different variables
 console.log(apple);
 let APPLE=12;
-console.log(APPLE);
+console.log(APPLE);   //symbols in variable name
 
 /*DATATYPES*/
 //PRIMITIVE DATATYPE   -- store single value
@@ -28,7 +28,7 @@ let str2='kaviya';
 
 let num1=9;
 let num2=9;
-console.log(`Result is ${a+b}`);   
+console.log(`Result is ${a+b}`);   //typeof - string
 
 //4.Boolean
 let res=5>2;
@@ -60,11 +60,11 @@ console.log(student);
 
 //Interactions
 //alert
-alert("Hello fill this form!!!");     //pop up appears if you click ok means only code runs
+//alert("Hello fill this form!!!");     //pop up appears if you click ok means only code runs
 //prompt
-let uname=prompt("Enter your name",'Varshini');    //take user input  -if user types name it is returned ,if they click cancel returns null,it always return string,we can also give default value
+//let uname=prompt("Enter your name",'Varshini');    //take user input  -if user types name it is returned ,if they click cancel returns null,it always return string,we can also give default value
 //if we want to return as number  - let uname=Number(prompt("Enter your name"));
-if(uname){
+/*if(uname){
     console.log("Useful");
 }
 else{
@@ -74,10 +74,10 @@ console.log(uname);
 //confirm
 let ques=confirm("Are you sure?");    //ask confirmation from user  -if user clicks ok true is returned ,if they click cancel returns false
 console.log(ques);
-
+*/
 //Type conversion   - changing one datatype to another
 //1.String(text)   - When something needs to be shown (display) → it becomes text
-alert(100);
+//alert(100);
 
 //2.Number(Math)  - everything becomes number
 console.log("6"/"2");    //op:3
@@ -86,8 +86,8 @@ console.log("hello"/2);  //op:NaN
 //3.Boolean  - false is for 0," ",null,undefined,Nan  ,for remaining all it is true
 if(0){
     console.log("run");
-}
-debugger;
+} 
+//debugger;
 //Operators - 5+2 (5,2)-operand,(+)-operator
 //1.Unary operator - works on one value
 let n1=10;
@@ -110,7 +110,7 @@ console.log(4**2);
 //special case = + with strings
 let string1="hello";
 let string2="welcome";
-console.log(string1+string2);
+console.log(string1+string2);//string and num concat
 
 console.log(1+'2');
 console.log(1+2+3+'5');
@@ -308,8 +308,8 @@ console.log("KTT");
 console.groupEnd();
 console.groupEnd();
 
-console.dir(document);
-console.dirxml(document.body);
+//console.dir(document);
+//console.dirxml(document.body);
 console.log(console.memory);
 
 //function
@@ -398,14 +398,223 @@ console.log(multiply(3,4));
 
 
 
+//Objects and Data structures
+let details={
+    id:1,
+    age:20,
+    Pass:true,
+    "Email id":"xyz@gmail.com"
+};
+//Accessing data
+console.log(details.Pass);              //dot notation
+console.log(details["Email id"]);       //square bracket notation - if key has space or special character
+
+//add
+details.name="Kalai";
+console.log(details.name);
+//update
+details.age=25;
+console.log(details.age);
+//delete
+delete details.Pass;
+console.log(details);
+
+//object property access
+let user={
+    nickName:"Pari",
+    age:20
+};
+let key="nickName";
+console.log(user.key);
+console.log(user[key]);
+
+//Computed property
+let fruit="apple";
+let shop={
+    [fruit]:5
+};
+console.log(shop.apple);  
+
+//shorthand property
+let idno=1;
+let month="march";
+let users={
+    idno,
+    month
+};
+console.log(users);
+
+//property naming rules
+let data={
+    let:1,
+    for:2,
+    return:3,
+    0:true
+};
+console.log(data);
+console.log(data["0"]);
+console.log(data[0]);
+
+let news={
+    data:undefined
+};
+console.log(news.data);
+console.log("data" in news);
 
 
+//sort
+let obj = {
+  2: "two",
+  1: "one"
+};
+console.log(obj);
+
+let obj1 = {
+  "+2": "two",
+  "+1": "one"
+};
+console.log(obj1);
+
+//looping
+let detail={
+    id:1,
+    age:20,
+    Pass:true,
+    "Email id":"xyz@gmail.com"
+};
+for(let key in detail){
+    console.log(key,detail[key]);
+}
+
+//primitive copying
+let m1=10;
+let m2=m1;
+m2=30;
+console.log(m1+" "+m2);
+
+//object copy
+let newdata={
+fname:"john"
+};
+let newdata1=newdata;
+newdata1.fname="Kamal";
+console.log(newdata);
+
+let copy={...newdata};
+copy.fname="Anu";
+console.log(copy);
+console.log(newdata);
+console.log(newdata1);
+
+//Comparison of objects
+let cur={};
+let next=cur;
+console.log(cur===next);
+
+let s1={};
+let s2={};
+console.log(s1===s2);
+
+//const object
+const use={
+    fname:"kani"
+};
+use.fname="kalai";
+console.log(use);
+
+//cloning                   //let clone=use; this is copying reference
+let clone={};
+for(let key in use){
+    clone[key]=use[key];
+}
+console.log(clone);
+
+let clone1={...use};
+console.log(clone1);
+
+let clone2=Object.assign({},use,{location:"erode"});
+console.log(clone2);
+
+let use1 = {
+  name: "John",
+  sizes: {
+    height: 182
+  }
+};
+let cloning = Object.assign({}, use1);
+console.log(cloning);
+
+let deepClone = structuredClone(use1);
+console.log(use1.sizes === deepClone.sizes); 
+
+let object = {
+  name: "John",
+  address: { city: "Chennai" }
+};
+let shallow = {...object};
+let deep = structuredClone(object);
+shallow.address.city = "Erode";
+deep.address.city = "Madurai";
+console.log(object.address.city);   
+console.log(shallow.address.city);
+console.log(deep.address.city);  
 
 
+//methods
+let met={
+    id:2,
+    age:34,
+    hello:function(){
+        console.log("Hello");
+    }
+};
+met.hello();
 
+let met1={
+    id:2,
+    age:34,
+    hello(){
+        console.log("Hello method 2");
+    }
+};
+met1.hello();
 
+let met2={
+    gname:"kaviya",
+    func1(){
+        console.log(this.gname);
+    }
+};
+met2.func1();
 
+function sayHi() {
+  console.log(this.name);
+}
+let user1 = { name: "John" };
+let admin = { name: "Admin" };
+user1.f = sayHi;
+admin.f = sayHi;
+user1.f();   // John
+admin.f();  // Admin
+console.log(user1);
+console.log(admin);
 
+//Constructor
+function Use(name){
+    this.name=name;
+    this.admin=false;
+    this.hello=function(){
+        console.log("New text");
+    };
+}
+let users1 = new Use("John");
+let users2 = new Use("Kaviya");
+console.log(users1);
+console.log(users2);
+users1.hello();
+users2.hello();
 
-
-
+//optional chaining
+let map={};
+//console.log(map.area.street);   //cannot read properties of undefined error
+console.log(map?.area?.street);
