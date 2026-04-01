@@ -417,7 +417,7 @@ details.age=25;
 console.log(details.age);
 //delete
 delete details.Pass;
-console.log(details);
+console.log(details);  //delete keyword ,without delete keyword
 
 //object property access
 let user={
@@ -524,7 +524,7 @@ console.log(use);
 
 //cloning                   //let clone=use; this is copying reference
 let clone={};
-for(let key in use){
+for(let key in use){  //nested
     clone[key]=use[key];
 }
 console.log(clone);
@@ -532,7 +532,7 @@ console.log(clone);
 let clone1={...use};
 console.log(clone1);
 
-let clone2=Object.assign({},use,{location:"erode"});
+let clone2=Object.assign({},use,{location:"erode"});   //Object 
 console.log(clone2);
 
 let use1 = {
@@ -552,7 +552,7 @@ let object = {
   address: { city: "Chennai" }
 };
 let shallow = {...object};
-let deep = structuredClone(object);
+let deep = structuredClone(object);  //available browser or node
 shallow.address.city = "Erode";
 deep.address.city = "Madurai";
 console.log(object.address.city);   
@@ -604,7 +604,7 @@ function Use(name){
     this.name=name;
     this.admin=false;
     this.hello=function(){
-        console.log("New text");
+        console.log("New text "+this.name);
     };
 }
 let users1 = new Use("John");
@@ -618,3 +618,287 @@ users2.hello();
 let map={};
 //console.log(map.area.street);   //cannot read properties of undefined error
 console.log(map?.area?.street);
+
+//Symbol type
+let ids1=Symbol(id);
+let ids2=Symbol(id);
+console.log(ids1===ids2);
+
+let idk=Symbol(id);
+let object1={
+    uname:"kamala",
+    state:"kerala",
+    [idk]:123
+};
+console.log(object1[idk]);
+console.log(object1);
+
+for(let key in object1){
+    console.log(key);             
+}
+
+let object2=Object.assign({},object1);
+console.log(object2);
+
+let globalId1=Symbol.for("globalId1");
+let globalId2=Symbol.for("globalId1");
+console.log(globalId1===globalId2);
+
+console.log(Symbol.keyFor(globalId1));
+
+//Object to primitive conversion
+let ob1={
+    gname:"kala",
+    toString(){
+        return this.gname;
+    }
+};
+console.log(JSON.stringify(ob1));
+console.log(ob1);
+//alert(ob1);
+
+let ob2={};
+console.log(ob2+2);
+
+let ob3={
+    toString(){
+        return "100";
+    }
+};
+console.log(ob3+3);
+
+let ob4={
+    toString(){
+        return "100";
+    }
+};
+console.log(ob4*3);
+
+let ob5={
+    toString(){
+        return "50"
+    }
+};
+let ob6={
+    toString(){
+        return "50"
+    }
+};
+console.log(ob5+ob6);
+
+let ob7={
+    toString(){
+        return "50"
+    }
+};
+let ob8={
+    toString(){
+        return "50"
+    }
+};
+console.log(ob5-ob6);
+
+//Methods of primitives
+let str="hello";
+console.log(str.toUpperCase());
+
+let m = 1.234;
+console.log(m.toFixed(2)); // 1.23
+
+let no=new Number(0);
+if(no){
+    console.log("Run this");
+}
+else{
+    console.log("Skip this");
+}
+
+let no1=0;
+if(no1){
+    console.log("Run this");
+}
+else{
+    console.log("Skip this");
+}
+
+let strnum="12345";
+console.log(Number(strnum));
+
+//console.log(null.test);             //cannot read properties of null -error
+console.log("hello".toUpperCase());
+
+//Numbers
+let billion=1_000_000_000;
+console.log(billion);
+
+let bill=1e9;
+console.log(bill);
+let bill1=3.7e9;
+console.log(bill1);
+let bill2=5.34e-2;
+console.log(bill2);
+
+let numb1=255;
+console.log(numb1.toString(2));
+console.log(numb1.toString(16));
+
+console.log((123).toString(2));
+
+//Rounding
+console.log(Math.floor(3.9)); // 3
+console.log(Math.ceil(3.1));  // 4
+console.log(Math.round(3.5)); // 4
+console.log(Math.trunc(3.9)); // 3
+console.log(Math.floor(-3.9)); //-4
+
+let numb2 = 12.3467890;
+console.log(numb2.toFixed(3)); // 12.347
+
+console.log(isNaN("abc"));                     //convert to num and check NaN
+console.log(isNaN("123"));                      
+console.log(Number.isNaN("123"));              //strict check for NaN
+console.log(Number.isNaN(NaN));
+
+console.log(isFinite("abc"));    
+console.log(Number.isFinite("abc"));                
+console.log(Number.isFinite("123")); 
+console.log(isFinite("123")); 
+
+console.log(Object.is(0, -0));
+console.log(Object.is(NaN, NaN));
+
+//Parse
+console.log(parseInt("120px"));
+console.log(parseFloat("12.3.4"));
+console.log(parseFloat("ab45.4"));
+
+console.log(Math.random());
+console.log(Math.max(3,4,5));
+console.log(Math.min(3,4,5));
+console.log(Math.pow(3,3));
+
+//String
+let hello=`Hello
+world`;
+console.log(hello);
+
+console.log("Hello\nworld");
+console.log("Name:\t Kala");
+console.log('It\'s a toy');
+console.log("C\\Data\\Program files");
+
+let world="hello";
+console.log(world.length);
+let world1="My\n";
+console.log(world1.length);
+
+//string character access
+console.log(world[1]);
+console.log(world1.at(-1));
+
+for(let ch of world){
+    console.log(ch);
+}
+
+//Immutable
+/*let st="hi";
+st[0]="m";
+console.log(st);*/
+let st1="Hello"
+st1="hello "+st1[0];
+console.log(st1);
+
+//case change
+console.log(st1.toUpperCase());
+console.log(st1.toLowerCase());
+
+//indexOf
+let st2="Tamil is a language";
+console.log(st2.indexOf("is"));
+
+console.log(st2.indexOf("Tamilas"));
+
+if(st2.indexOf("Tamil")){
+    console.log("Found the word");
+}
+if(st2.indexOf("Tamil")!=-1){
+    console.log("Found");
+}
+
+//includes
+console.log(st2.includes("language"));
+//startsWith and endsWith
+console.log(st2.startsWith("Fam"));
+console.log(st2.endsWith("age"));
+
+//Substring methods
+let substr=" International,national ";
+//slice
+console.log(substr.slice(0,4));    //start and end exclude index 5
+console.log(substr.slice(2));
+console.log(substr.slice(-4));
+//substring
+console.log(substr.substring(0,5));    //start and end exclude index 5
+//substr
+console.log(substr.substr(1,6));     //start and length
+
+console.log('A'<'Z');
+console.log(substr.replace("al","ally"));        //changes only 1st occurance
+console.log(substr.replaceAll("al","ally"));     //replaces all
+console.log(substr.trim());
+console.log(substr.split(","));
+console.log(substr.search("ter"));
+console.log(substr.charCodeAt(1));
+console.log(substr.codePointAt(2));
+console.log("helloooo ".repeat(4));
+console.log(substr.padStart(30,"*"));
+console.log(substr.padEnd(30,"#"));
+console.log(String.raw`Hello\nWorld`);                 // "Hello\nWorld"-no new line
+
+
+//Array
+let fruits=["Apple","Banana","Grapes","orange"];
+console.log(fruits);
+console.log(fruits[1]);     //access array element
+console.log(fruits[1]="mango");  //replace
+console.log(fruits);
+console.log(fruits[4]="peer");   //add
+console.log(fruits);            
+console.log(fruits[fruits.length-1]);     //last element
+console.log(fruits.at(-1));       //last element
+console.log(fruits.length);      //total no of items
+
+let arr=new Array(1,2,3);
+arr.push(6);
+console.log(arr);
+arr.pop();     
+console.log(arr);
+arr.shift();
+console.log(arr);
+arr.unshift(5);
+console.log(arr);
+for(let i=0;i<arr.length;i++){
+    console.log(arr[i]);
+}
+for(let item of arr){
+    console.log(item);
+}
+
+let arr1=new Array(3);
+console.log(arr1);
+console.log(arr1.length=0);
+console.log(arr1);
+
+let arr2=["Apple",12,{address:"Erode"},true,function(){console.log("array")}];
+console.log(arr2);
+
+let matrix=[
+    [1,2,3],
+    [4,5,6]
+];
+console.log(matrix[1][1]);
+
+let marr=[1,2,3];
+console.log(marr.toString());
+
+
