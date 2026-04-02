@@ -650,7 +650,7 @@ console.log(Symbol.keyFor(globalId1));
 let ob1={
     gname:"kala",
     toString(){
-        return this.gname;
+        return this.gname;   //global,fuction,arrow
     }
 };
 console.log(JSON.stringify(ob1));
@@ -665,7 +665,7 @@ let ob3={
         return "100";
     }
 };
-console.log(ob3+3);
+console.log({result: ob3+3, type: typeof ob3+3});
 
 let ob4={
     toString(){
@@ -702,6 +702,7 @@ console.log(ob5-ob6);
 let str="hello";
 console.log(str.toUpperCase());
 
+
 let m = 1.234;
 console.log(m.toFixed(2)); // 1.23
 
@@ -731,7 +732,7 @@ console.log("hello".toUpperCase());
 let billion=1_000_000_000;
 console.log(billion);
 
-let bill=1e9;
+let bill=1e9;   //e
 console.log(bill);
 let bill1=3.7e9;
 console.log(bill1);
@@ -785,8 +786,8 @@ console.log(hello);
 console.log("Hello\nworld");
 console.log("Name:\t Kala");
 console.log('It\'s a toy');
-console.log("C\\Data\\Program files");
-
+console.log("C\\Data\\Program files"); //
+0
 let world="hello";
 console.log(world.length);
 let world1="My\n";
@@ -835,6 +836,7 @@ console.log(st2.endsWith("age"));
 let substr=" International,national ";
 //slice
 console.log(substr.slice(0,4));    //start and end exclude index 5
+//
 console.log(substr.slice(2));
 console.log(substr.slice(-4));
 //substring
@@ -843,7 +845,7 @@ console.log(substr.substring(0,5));    //start and end exclude index 5
 console.log(substr.substr(1,6));     //start and length
 
 console.log('A'<'Z');
-console.log(substr.replace("al","ally"));        //changes only 1st occurance
+console.log(substr.replace("al","ally"));  //       //changes only 1st occurance
 console.log(substr.replaceAll("al","ally"));     //replaces all
 console.log(substr.trim());
 console.log(substr.split(","));
@@ -889,7 +891,7 @@ console.log(arr1);
 console.log(arr1.length=0);
 console.log(arr1);
 
-let arr2=["Apple",12,{address:"Erode"},true,function(){console.log("array")}];
+let arr2=["Apple",12,{address:"Erode"},true];
 console.log(arr2);
 
 let matrix=[
@@ -900,5 +902,267 @@ console.log(matrix[1][1]);
 
 let marr=[1,2,3];
 console.log(marr.toString());
+console.log("-----------------");
+
+//Array methods
+let color=["red","black","green"];
+console.log(color[0]);
+
+color.push("purple");
+console.log(color);
+color.pop();
+console.log(color);
+color.shift();
+console.log(color);
+color.unshift("Grey");
+console.log(color);
+
+//indexof
+color.push("black");
+console.log(color);
+console.log(color.indexOf("black"));                 //first occurrence
+console.log(color.lastIndexOf("black"));             //Last occurrence
+
+//Immutable change
+let col=color.with(1,"peach");                       //original array does not change
+console.log(color);
+console.log(col);
+
+//looping
+for(let i of color){
+    console.log(i);                  //values only
+}
+color.forEach((item,index)=>console.log(item,index));           //with index
+
+let map1=[1,2,3,4];
+let d1=map1.map(n=>n*2);              //modify all array elements
+console.log(map1);
+console.log(d1);
+let d2=map1.filter(n=>n%2===0);       //select some elements based on the condition
+console.log(d2);
+console.log(map1);
+
+//check values
+console.log(color.includes("Grey"));   //true
+console.log(color.length);             //length of array
+
+console.log(map1.find(n=>n>3));        //first match 
+console.log(map1);        
+console.log(map1.some(n=>n>2));        //if atleast one it returns true
+console.log(map1.every(n=>n>0));       //all match true
+console.log(map1.every(n=>n%2===0));
+
+console.log(map1.concat(color));
+console.log(map1.slice(1,3));         //start and end exclude end index
+let map2=[6,7,8,9];
+let new9=(map2.splice(0,2));          //start from 0th index and delete two elements it changes original array
+console.log(new9);
+console.log(map2);
+
+let o1=[7,3,8,9,4,6,1,2];
+console.log(o1.toSorted());              //.sort() and .reverse use pana original arrray layum change aagum
+console.log(o1.toReversed());
+console.log(o1);
+
+let ar1=[1,2,3,4];
+let additive=ar1.reduce((acc,curr)=>acc+curr,0);
+console.log(additive);
+
+let ar2 = [[1,2],[3,4],[5]];
+let flat = ar2.reduce((a, c) => a.concat(c), []);
+console.log(flat);                   // [1,2,3,4,5]
+
+let ar3=["kavya","kamal","kalai"];
+console.log(ar3.join(";"));
+console.log("------------------------");
+
+//Iterable
+for(let i of ar3){
+    console.log(i);
+}
+for(let i of "hello"){
+    console.log(i);
+}
+
+let objects1 = {
+  [Symbol.iterator]() {
+    let arr6=[1,2,3,4];
+    let i = 0;
+    return {
+      next() {
+        if (i<arr6.length) {
+          return { value: arr6[i++], done: false };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+for (let x of objects1){
+    console.log(x);
+};
+console.log("------------------------");
+
+//Map 
+let mapping=new Map();
+mapping.set("John",90);
+mapping.set("Jack",56);
+console.log(mapping.get("John"));
+console.log(mapping);                   //also it shows no of entries
+
+let obj9={
+    1:"hello",
+    "1":"hi"
+};
+console.log(obj9);   //objects keys are converted to string and overwrites previous value
+
+let maps1=new Map();
+maps1.set(1,"hello");
+maps1.set("1","hii");
+console.log(maps1.get(1));
+console.log(maps1.get("1"));
+
+let uses1 = {name:"john"};
+let map3 = new Map();
+map3.set(uses1, 100);
+console.log(map3.get(uses1));           
+console.log(map3.get(uses1.name));        //map searches for the exact key here it searches for "john" string but it stored the entire object
+
+//chaining
+map3.set("Kala",1)
+    .set("Kamala",2)
+    .set("Kavya",3);
+console.log(map3);
+
+//copy one map to another
+let mapping1=new Map([...map3]);
+console.log(mapping1);
+
+let mapping2=new Map();
+for(let[key,value] of map3){
+  mapping2.set(key,value);
+}
+console.log(mapping2);
+
+let map4=new Map([
+    ["apple",23],
+    ["banana",34]
+]);
+for(let [key,value] of map4){
+    console.log(key,value);
+}
+console.log(map4.has("apple"));
+console.log(map4.delete("apple"));
+console.log(map4);
+console.log(map4.size);
+console.log(map4.clear());
+console.log(map4);
+
+//Object to map
+let obje1={
+    name:"kalai",
+    "age":34
+};
+let map5=new Map(Object.entries(obje1));
+console.log(map5);
+
+//Map to object
+console.log(Object.fromEntries(map5));
+console.log("------------------------");
+
+//Set
+let set=new Set();      //remove duplicates
+set.add("John");
+set.add("Jack");
+set.add("John");
+console.log(set);
+
+console.log(set.has("Jack"));
+console.log(set.delete("John"));
+console.log(set);
+console.log(set.size);
+set.add("Mary");
+set.add("Kayal");
+console.log(set);
+
+for(let i of set){
+    console.log(i);
+}
+
+//remove duplicates
+let array=[1,2,3,1,2];
+let uni=new Set(array);
+console.log(uni);
+console.log(Array.from(uni));           //convert set to array
+
+//numbers in set
+let set1=new Set();
+set1.add(1);
+set1.add(1);
+console.log(set1.size);
+
+//objects in set
+let set2=new Set();
+let oj1={name:"kala",id:90};
+let oj2={name:"kala",id:90};
+set2.add(oj1);
+set2.add(oj2);
+console.log(set2.size);
+console.log("------------------------");
+
+//Garbage collection
+let johny = {name:"John"};
+johny = null;
+console.log(johny);               //no reference removed from memory
+
+//array-object
+let jack={id:1,state:"kerala"};
+let arrays1=[jack];              //reference of the object is in 0th index
+jack=null;
+console.log(jack);
+console.log(arrays1);
+
+//map-object
+let objec1={state:"kerala"};
+let rmap=new Map();
+rmap.set(objec1,"data");           //map has the reference for the object so GC la object delete aagathu
+objec1=null; 
+console.log(objec1);
+console.log(rmap);
+
+
+//weak map
+let o2={};
+let wmap=new WeakMap();
+wmap.set({},"data");
+console.log(wmap);
+//wmap.set(12);
+//console.log(wmap);                //Invalid value used by weakmap key
+wmap.set(o2,"data");
+console.log(wmap);
+
+//weakmap-object
+let objec2={state:"kerala"};
+let wm=new WeakMap();
+wm.set(objec2,"data");           
+objec2=null;                        //weak link so object is deleted by GC
+console.log(objec2);
+console.log(wm);
+
+//weakset
+let ws = new WeakSet();
+let user8 = {name:"John"};
+ws.add(user8);
+console.log(ws.has(user8)); // true
+user8 = null;
+console.log(ws.has(user8));
+
+
+
+
+
+
+
 
 
