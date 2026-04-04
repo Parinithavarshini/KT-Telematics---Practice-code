@@ -1,6 +1,7 @@
-"use strict";       //Forces to enter correct code
+"use strict";       //Follow strict rules
 //Single line command
 /*Multi line command*/
+console.log("------Variable basics------");
 let x=20;    //creating variable
 console.log(x);
 let y=30;
@@ -9,18 +10,19 @@ console.log(y); //changing value of a variable
 let apple=11;         //case sensitive treat this as different variables
 console.log(apple);
 let APPLE=12;
-console.log(APPLE);   //symbols in variable name
+console.log(APPLE);   //symbols in variable name - _,$
 
 /*DATATYPES*/
 //PRIMITIVE DATATYPE   -- store single value
 //1.Number
+console.log("-----Datatypes-----");
 let a=10;  //Integer
 let b=2.5;  //Decimal
 console.log(a+b);
 
 //2.BigInt   -->greater than 2^53-1
 let bigint=BigInt("12345676543");  //1st way to declare bigint  2nd-12345678n
-console.log(typeof bigint);
+console.log(bigint);
 
 //3.String
 let str1="Hello";
@@ -78,17 +80,18 @@ console.log(ques);
 //Type conversion   - changing one datatype to another
 //1.String(text)   - When something needs to be shown (display) → it becomes text
 //alert(100);
-
+console.log("-----Type conversions-----");
 //2.Number(Math)  - everything becomes number
 console.log("6"/"2");    //op:3
 console.log("hello"/2);  //op:NaN
 
-//3.Boolean  - false is for 0," ",null,undefined,Nan  ,for remaining all it is true
+//3.Boolean  - false is for 0,"",null,undefined,Nan  ,for remaining all it is true
 if(0){
     console.log("run");
 } 
 //debugger;
-//Operators - 5+2 (5,2)-operand,(+)-operator
+console.log("-----Operators-----");
+//Operators - 5+2 (5,2)-operand,(+)-operator    
 //1.Unary operator - works on one value
 let n1=10;
 n1=-n1;
@@ -174,7 +177,7 @@ else{
 }
 //ternary operator
 let vote=20;
-let voteage=age>18?"yes":"no";
+let voteage=vote>18?"yes":"no";
 console.log(voteage);
 
 //Logical operators
@@ -220,10 +223,6 @@ for(;c1<5;c1++){
     console.log(c1);
 }
 
-let c2=5;
-for(;c2<8;){
-    console.log(c2++);
-}
 //Infinite loop
 /*for(;;){
     console.log("none");
@@ -308,10 +307,9 @@ console.log("KTT");
 console.groupEnd();
 console.groupEnd();
 
-//console.dir(document);
-//console.dirxml(document.body);
 console.log(console.memory);
 
+console.log("-----Functions-----");
 //function
 function new1(){
     console.log("Print 2026");
@@ -323,8 +321,6 @@ function new2(year="2025"){           //default value to a function
     console.log("Year is "+year);
 }
 
-x=30;
-y=60;
 //local and global variables
 let fname="John";
 function test(){
@@ -371,7 +367,7 @@ let new4=function(){
 let new5=new4;
 new5();
 
-//Callback function
+//Callback function                 //passing one func as argument to another function
 function greeting(name,callback){
     console.log("Hello "+name);
     callback();
@@ -417,7 +413,7 @@ details.age=25;
 console.log(details.age);
 //delete
 delete details.Pass;
-console.log(details);  //delete keyword ,without delete keyword
+console.log(details);  
 
 //object property access
 let user={
@@ -552,14 +548,14 @@ let object = {
   address: { city: "Chennai" }
 };
 let shallow = {...object};
-let deep = structuredClone(object);  //available browser or node
+let deep = structuredClone(object);  
 shallow.address.city = "Erode";
 deep.address.city = "Madurai";
 console.log(object.address.city);   
 console.log(shallow.address.city);
 console.log(deep.address.city);  
 
-
+console.log("------Methods------");
 //methods
 let met={
     id:2,
@@ -650,7 +646,7 @@ console.log(Symbol.keyFor(globalId1));
 let ob1={
     gname:"kala",
     toString(){
-        return this.gname;   //global,fuction,arrow
+        return this.gname;   
     }
 };
 console.log(JSON.stringify(ob1));
@@ -728,6 +724,7 @@ console.log(Number(strnum));
 //console.log(null.test);             //cannot read properties of null -error
 console.log("hello".toUpperCase());
 
+console.log("-----Numbers-----");
 //Numbers
 let billion=1_000_000_000;
 console.log(billion);
@@ -778,6 +775,7 @@ console.log(Math.max(3,4,5));
 console.log(Math.min(3,4,5));
 console.log(Math.pow(3,3));
 
+console.log("-----String-----");
 //String
 let hello=`Hello
 world`;
@@ -857,7 +855,7 @@ console.log(substr.padStart(30,"*"));
 console.log(substr.padEnd(30,"#"));
 console.log(String.raw`Hello\nWorld`);                 // "Hello\nWorld"-no new line
 
-
+console.log("-----Array-----");
 //Array
 let fruits=["Apple","Banana","Grapes","orange"];
 console.log(fruits);
@@ -920,7 +918,7 @@ console.log(color);
 //indexof
 color.push("black");
 console.log(color);
-console.log(color.indexOf("black"));                 //first occurrence
+console.log(color.indexOf("black"));                 //first occurrence 
 console.log(color.lastIndexOf("black"));             //Last occurrence
 
 //Immutable change
@@ -966,10 +964,10 @@ console.log(o1);
 
 let ar1=[1,2,3,4];
 let additive=ar1.reduce((acc,curr)=>acc+curr,0);
-console.log(additive);
+console.log(additive); 
 
-let ar2 = [[1,2],[3,4],[5]];
-let flat = ar2.reduce((a, c) => a.concat(c), []);
+let ar2 = [[1,2],[3,4],[5]];    //flatMap
+let flat = ar2.reduce((a, c) => a.concat(c), []);  
 console.log(flat);                   // [1,2,3,4,5]
 
 let ar3=["kavya","kamal","kalai"];
@@ -1002,8 +1000,8 @@ let objects1 = {
 for (let x of objects1){
     console.log(x);
 };
-console.log("------------------------");
 
+console.log("-----Map-----");
 //Map 
 let mapping=new Map();
 mapping.set("John",90);
@@ -1064,13 +1062,13 @@ let obje1={
     name:"kalai",
     "age":34
 };
-let map5=new Map(Object.entries(obje1));
+let map5=new Map(Object.entries(obje1));   //object entries return value?,empty array 
 console.log(map5);
 
 //Map to object
 console.log(Object.fromEntries(map5));
-console.log("------------------------");
 
+console.log("-----Set-----");
 //Set
 let set=new Set();      //remove duplicates
 set.add("John");
@@ -1109,8 +1107,8 @@ let oj2={name:"kala",id:90};
 set2.add(oj1);
 set2.add(oj2);
 console.log(set2.size);
-console.log("------------------------");
 
+console.log("-----GC-----");
 //Garbage collection
 let johny = {name:"John"};
 johny = null;
@@ -1157,9 +1155,108 @@ ws.add(user8);
 console.log(ws.has(user8)); // true
 user8 = null;
 console.log(ws.has(user8));
+console.log("--------------------------------");
 
+//Object.keys / values / entries
+let obje2={
+    username:"kavitha",
+    age:30
+};
+console.log(Object.keys(obje2));
+console.log(Object.values(obje2));
+console.log(Object.entries(obje2));
 
+for(let val of Object.keys(obje2)){
+    console.log(val);
+}
+for (let [key, value] of Object.entries(obje2)) {
+    console.log(key, value);
+}
+console.log(Object.keys(obje2).length);
 
+console.log("-----Destructing assignment-----");
+//Destructing Assignment
+let [usname,newage]=["kavitha",34];
+console.log(usname,newage);
+
+let [usname1,,state]=["kamala","yes","kerala"];
+console.log(usname1,state);
+
+let[a6,a7,...rest]=[1,2,3,4];
+console.log(a6);
+console.log(a7);
+console.log(rest);
+
+let x2 = 10;
+let y2 = 20;
+[x2, y2] = [y2, x2];
+console.log(x2);
+console.log(y2);
+
+let [x3="Guest",y3="Jack"]=["John"];
+console.log(x3);
+console.log(y3);
+
+let users3 = {
+  uname: "John",
+  uage: 30
+};
+let {uname,uage} = users3;
+console.log(uname,uage);
+
+let{naming:new6}={naming:"Jack"};
+console.log(new6);
+
+let {x4=100}={};
+console.log(x4);
+
+let {a8,...rest1}={a8:1,a9:2,a10:3};
+console.log(a8,rest1);
+
+console.log("-----Date and time-----");
+//Date and time
+let time=new Date();                 //current date and time
+console.log(time);
+console.log(time.getTime());
+
+let t=new Date(0);
+console.log(t);
+
+let t1=new Date(1000);
+console.log(t1);
+
+let t2=new Date(-1000);
+console.log(t2);
+
+let t3 = new Date("2020-05-10");
+console.log(t3);
+
+let t4=new Date(2026,3,3,12,30,0);
+console.log(t4);
+
+console.log(time.getFullYear());
+console.log(time.getMonth());
+console.log(time.getDate());
+console.log(time.getDay());
+console.log(time.getHours());
+console.log(time.getMinutes());
+console.log(time.getSeconds());
+console.log(time.getUTCFullYear());
+console.log(time.getUTCHours());
+console.log(time.toISOString());
+console.log(time.toString());
+console.log(time.setFullYear(2027));
+console.log(time.setMonth(8));
+
+let d3= new Date(2020,1,31);
+console.log(d3);
+
+let d4=new Date(2026,3,3);
+let d5=new Date(2026,3,4);
+console.log(d5-d4);
+
+let ms = Date.parse("2020-01-01");
+console.log(ms);
 
 
 
