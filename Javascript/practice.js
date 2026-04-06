@@ -966,7 +966,7 @@ let ar1=[1,2,3,4];
 let additive=ar1.reduce((acc,curr)=>acc+curr,0);
 console.log(additive); 
 
-let ar2 = [[1,2],[3,4],[5]];    //flatMap
+let ar2 = [[1,2],[3,4],[5]];    
 let flat = ar2.reduce((a, c) => a.concat(c), []);  
 console.log(flat);                   // [1,2,3,4,5]
 
@@ -1258,6 +1258,59 @@ console.log(d5-d4);
 let ms = Date.parse("2020-01-01");
 console.log(ms);
 
+//JSON methods/toJSON
+const object3={
+    name:"kavin",
+    age:45
+};
+const json=(JSON.stringify(object3));
+console.log(json);
+const jsonobj=(JSON.parse(json));
+console.log(jsonobj);
+
+const jobj={
+    id:23,
+    dept:"it",
+    location:{state:"kerala"}
+};
+const job=(JSON.stringify(jobj));
+console.log(job);
+console.log(jobj);
+
+/*const ja={};
+const jb={};
+ja.ref=jb;
+jb.ref=ja;
+console.log(JSON.stringify(ja));*/
+
+console.log(JSON.stringify(jobj,["dept"]));
+
+//toJSON
+const jsobj={
+    city:"coimbatore",
+    state:"Tamilnadu",
+    toJSON(){
+        return this.city;
+    }
+};
+console.log(JSON.stringify(jsobj));
+
+const jsobj1={
+    city:"chennai",
+    id:34,
+    toJSON(){
+        return {custom:"yes"};
+    }
+};
+console.log(JSON.stringify(jsobj1));
+
+let stri1='{"date":"2026-04-06T10:00:00.000Z"}';
+let object4=JSON.parse(stri1,function(key,value) {
+  if (key==="date") return new Date(value);
+  return value;
+});
+console.log(object4);
+console.log(object4.date.getDate());
 
 
 
