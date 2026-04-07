@@ -159,4 +159,128 @@ let function1=function func(name){
 }
 function1();
 
+//New function
+function add(a,b){                         //Normal function
+  return a+b;
+}
+console.log(add(6,6));
+
+let sub=new Function('n1','n2','return n1-n2');           //New function
+console.log(sub(9,3));
+
+/*let news='alert("Login success")';
+let funcnews=new Function(news);
+funcnews();*/
+
+function next(){
+  const text="Hello";
+  return function()
+  {
+    console.log("Login success "+text);
+  };
+}
+next()();
+
+globalThis.value=10;
+function next1(){
+  //const value="Hello";
+  return new Function('console.log(value)');
+}
+next1()();
+
+let next2=new Function('value','console.log(value)');
+next2("Hello");
+
+//Scheduling
+//setTimeout
+let set1=setTimeout(()=>{
+  console.log("Helloooo");
+},10000);
+//clearTimeout(set1);
+
+//setInterval
+// let set2=setInterval(()=>{
+//   console.log("After 5 sec");
+// },5000);
+// clearInterval(set2);
+
+function pow(a,b){
+  console.log(Math.pow(a,b));
+}
+setTimeout(pow,1000,2,3);
+
+console.log("Start");
+setTimeout(()=>{
+  console.log("Middle");
+},3000);
+console.log("End");
+
+let counted=0;
+setTimeout(function run(){
+  console.log("Print fastly");
+  counted++;
+  if(counted<3){
+    setTimeout(run,2000);
+  }
+},4000);
+
+setTimeout(()=>{
+  console.log("World");
+},0);
+console.log("Hello");
+
+//Decorator  - doubt
+// function greet(name){
+//   return "Hello "+name;
+// }
+// function deco(func){
+//   return function(name){
+//     console.log("Before");
+//     let res=func(name);
+//     console.log("After");
+//     return res;
+//   };
+// }
+// greet=deco(greet);
+// console.log(greet("John"));
+
+//Function binding
+let objfunc={ 
+  name:"kalai",
+  age:34,
+  hello(){
+    console.log(this.name);
+  }
+};
+setTimeout(objfunc.hello,1000);      //reference
+
+
+let objfunc1={ 
+  name:"kalai",
+  age:34,
+  hello(){
+    console.log(this.name);
+  }
+};
+setTimeout(()=>(objfunc1.hello()),1000);
+
+let news1=objfunc1.hello.bind(objfunc1);
+setTimeout(news1,12000);
+
+function binding(msg,name){
+  console.log(msg+" "+name);
+}
+let newbind=binding.bind(null,"hello");  //call,apply
+newbind("john");
+
+let obj8={
+  name:"Kamalaa",
+  show(){
+    setTimeout(()=>{
+      console.log(this.name);
+    },1000);
+  }
+};
+obj8.show();
+
 

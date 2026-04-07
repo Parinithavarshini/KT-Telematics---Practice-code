@@ -1304,6 +1304,7 @@ const jsobj1={
 };
 console.log(JSON.stringify(jsobj1));
 
+//reviver function
 let stri1='{"date":"2026-04-06T10:00:00.000Z"}';
 let object4=JSON.parse(stri1,function(key,value) {
   if (key==="date") return new Date(value);
