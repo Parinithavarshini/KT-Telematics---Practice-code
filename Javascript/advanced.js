@@ -385,6 +385,24 @@ console.log(validate.age);
 validate.age=25;
 console.log(validate.age);
 
+//Questions
+let stri="1234.4567";
+parseFloat(stri);
+let result=Math.floor(stri*10)/10;
+console.log(result);
+
+function check(str){
+  if(/^[0-9]/.test(str)){
+    console.log("Starts with number");
+  }
+  else{
+    console.log("Starts with string");
+  }
+};
+check("34djdl09");
+check("jhdg567");
+
+
 //Prototypes
 //objects
 let parent={
@@ -400,5 +418,163 @@ child.greet();
 let child2=Object.create(parent);
 child2.greet();
 
+//F.prototype
+function Person(name){
+  this.name=name;
+  this.hello=function(){
+    console.log("hello "+this.name);
+  }
+};
+let user1=new Person("john");
+let user2=new Person("jack");
+console.log(user1);
+console.log(user2);
 
+function Person1(name){
+  this.name=name;
+};
+Person1.prototype.hello=function(){
+  console.log("hi "+this.name);
+}
+let user3=new Person1("john");
+let user4=new Person1("jack");
+console.log(user3);
+user3.hello();
+console.log(user4);
+user4.hello();
+
+//Native prototype
+console.log(Object.getOwnPropertyNames(Array.prototype));
+console.log(Object.getOwnPropertyNames(String.prototype));
+console.log(Object.getOwnPropertyNames(Object.prototype));
+
+Array.prototype.sayhi=function(){
+  console.log("heloo");
+}
+console.log(Object.getOwnPropertyNames(Array.prototype));
+
+console.log(Object.getOwnPropertyNames(Function.prototype));
+console.log(Object.getOwnPropertyNames(Number.prototype));
+console.log(Object.getOwnPropertyNames(Boolean.prototype));
+console.log(Object.getOwnPropertyNames(Date.prototype));
+console.log(Object.getOwnPropertyNames(RegExp.prototype));
+console.log(Object.getOwnPropertyNames(Error.prototype));
+
+//Methods defined in prototype is shared by all the objects
+let objectpro={};
+console.log(objectpro.toString());
+
+// let objectpro1=Object.create(null);
+// objectpro1.name="kala";
+// console.log(objectpro1.name);
+// console.log(objectpro1.toString());            //TypeError: objectpro1.toString is not a function
+
+//Class - blueprint for creating object
+class User{
+  constructor(name){
+    this.name=name;
+  }
+  hello(){
+    console.log(this.name);
+  }
+}
+let users1=new User("Johny");
+users1.hello();
+
+class Use{}
+console.log(typeof Use);
+
+//Class Expression
+let classexp=class{
+  Sayhi(){
+    console.log("Hello world");
+  }
+}
+let use=new classexp();
+use.Sayhi();
+
+//Named class Expression
+let classexp1=class Myclass{
+  Sayhi(){
+    console.log(Myclass);
+  }
+}
+new classexp1().Sayhi();
+
+//Computed method name
+class first{
+  ['say'+'hi'](){
+    console.log("Computed method");
+  }
+}
+new first().sayhi();
+
+//Class fields
+class second{
+  name="kalai";
+  sayhi(){
+    console.log(this.name);
+  }
+}
+new second().sayhi();
+
+//Inheritance
+class Animal{
+  run(){
+    console.log("Animal runs");
+  }
+}
+class Rabbit extends Animal{
+  jump(){
+    console.log("Rabbit jumps");
+  }
+}
+let r=new Rabbit();
+r.run();
+r.jump();
+
+//method overriding
+class Animals{
+  run(){
+    console.log("Animal runs");
+  }
+}
+class Rabbits extends Animals{
+  run(){
+    console.log("Rabbit jumps");
+  }
+}
+let ra=new Rabbits();
+ra.run();
+
+//super
+class Animal1{
+  run(){
+    console.log("Animal runs fast");
+  }
+}
+class Rabbit1 extends Animal1{
+  run(){
+    super.run();
+    console.log("Rabbit jumps quickly");
+  }
+}
+let rab=new Rabbit1();
+rab.run();
+
+//Constructor
+class Animalc{
+  constructor(name){
+    this.name=name;
+    console.log(name);
+  }
+}
+class Rabbitc extends Animalc{
+  constructor(name){
+    super(name);
+    this.name=name.toUpperCase();
+  }
+}
+let obr=new Rabbitc("Bunny");
+console.log(obr.name);
 
