@@ -193,94 +193,212 @@ next2("Hello");
 
 //Scheduling
 //setTimeout
-let set1=setTimeout(()=>{
-  console.log("Helloooo");
-},10000);
-//clearTimeout(set1);
+// let set1=setTimeout(()=>{
+//   console.log("Helloooo");
+// },10000);
+// //clearTimeout(set1);
 
-//setInterval
-// let set2=setInterval(()=>{
-//   console.log("After 5 sec");
-// },5000);
-// clearInterval(set2);
+// //setInterval
+// // let set2=setInterval(()=>{
+// //   console.log("After 5 sec");
+// // },5000);
+// // clearInterval(set2);
 
-function pow(a,b){
-  console.log(Math.pow(a,b));
-}
-setTimeout(pow,1000,2,3);
-
-console.log("Start");
-setTimeout(()=>{
-  console.log("Middle");
-},3000);
-console.log("End");
-
-let counted=0;
-setTimeout(function run(){
-  console.log("Print fastly");
-  counted++;
-  if(counted<3){
-    setTimeout(run,2000);
-  }
-},4000);
-
-setTimeout(()=>{
-  console.log("World");
-},0);
-console.log("Hello");
-
-//Decorator  - doubt
-// function greet(name){
-//   return "Hello "+name;
+// function pow(a,b){
+//   console.log(Math.pow(a,b));
 // }
-// function deco(func){
-//   return function(name){
-//     console.log("Before");
-//     let res=func(name);
-//     console.log("After");
-//     return res;
-//   };
+// setTimeout(pow,1000,2,3);
+
+// console.log("Start");
+// setTimeout(()=>{
+//   console.log("Middle");
+// },3000);
+// console.log("End");
+
+// let counted=0;
+// setTimeout(function run(){
+//   console.log("Print fastly");
+//   counted++;
+//   if(counted<3){
+//     setTimeout(run,2000);
+//   }
+// },4000);
+
+// setTimeout(()=>{
+//   console.log("World");
+// },0);
+// console.log("Hello");
+
+// //Decorator  - doubt
+// // function greet(name){
+// //   return "Hello "+name;
+// // }
+// // function deco(func){
+// //   return function(name){
+// //     console.log("Before");
+// //     let res=func(name);
+// //     console.log("After");
+// //     return res;
+// //   };
+// // }
+// // greet=deco(greet);
+// // console.log(greet("John"));
+
+// //Function binding
+// let objfunc={ 
+//   name:"kalai",
+//   age:34,
+//   hello(){
+//     console.log(this.name);
+//   }
+// };
+// setTimeout(objfunc.hello,1000);      //reference
+
+
+// let objfunc1={ 
+//   name:"kalai",
+//   age:34,
+//   hello(){
+//     console.log(this.name);
+//   }
+// };
+// setTimeout(()=>(objfunc1.hello()),1000);
+
+// let news1=objfunc1.hello.bind(objfunc1);
+// setTimeout(news1,12000);
+
+// function binding(msg,name){
+//   console.log(msg+" "+name);
 // }
-// greet=deco(greet);
-// console.log(greet("John"));
+// let newbind=binding.bind(null,"hello");  //call,apply
+// newbind("john");
 
-//Function binding
-let objfunc={ 
-  name:"kalai",
-  age:34,
-  hello(){
-    console.log(this.name);
-  }
+// let obj8={
+//   name:"Kamalaa",
+//   show(){
+//     setTimeout(()=>{
+//       console.log(this.name);
+//     },1000);
+//   }
+// };
+// obj8.show();
+
+console.log("--------Property flags and descriptors-----------");
+//Property descriptor
+let user={
+  name:"kanika",
+  age:24
 };
-setTimeout(objfunc.hello,1000);      //reference
+let descriptor=Object.getOwnPropertyDescriptor(user,"name");
+console.log(descriptor);
 
+//Writable flag
+Object.defineProperty(user,"name",{writable:false});
+user.name="John";
+console.log(user);                                     //use strict - cannot assign value to read only property
 
-let objfunc1={ 
-  name:"kalai",
-  age:34,
-  hello(){
-    console.log(this.name);
-  }
-};
-setTimeout(()=>(objfunc1.hello()),1000);
-
-let news1=objfunc1.hello.bind(objfunc1);
-setTimeout(news1,12000);
-
-function binding(msg,name){
-  console.log(msg+" "+name);
+//enumerable flag
+Object.defineProperty(user,"name",{enumerable:false});
+for(let x in user){
+  console.log(x);
 }
-let newbind=binding.bind(null,"hello");  //call,apply
-newbind("john");
 
-let obj8={
-  name:"Kamalaa",
-  show(){
-    setTimeout(()=>{
-      console.log(this.name);
-    },1000);
+//configurable flag
+Object.defineProperty(user,"name",{configurable:false,enumerable:true});
+delete user.name;
+for(let x in user){
+  console.log(x);
+}
+
+//new property
+Object.defineProperty(user,"email",{value:"kanika@gmail.com" ,enumerable:true});
+for(let x in user){
+  console.log(x);
+}
+console.log(user);
+
+//multiple new properties
+Object.defineProperties(user,{
+  "Phone":{value:"9876567896",enumerable:true},
+  "State":{value:"Tamilnadu",enumerable:true}
+});
+for(let x in user){
+  console.log(x);
+}
+console.log(user);
+
+//extensions,seal and freeze
+Object.preventExtensions(user);      //cannot add new properties but can modify existing one
+Object.seal(user);                   //cannot add or delete,but modify existing one
+Object.freeze(user);                 //cannot do anything
+
+console.log(Object.isFrozen(user));
+console.log(Object.isSealed(user));
+console.log(Object.isExtensible(user));
+
+//Property getters and setters
+let ob={
+  fname:"john",
+  lname:"doe",
+  id:101,
+  get fullname(){
+    return `${this.fname} ${this.lname}`;
+  },
+  set ids(value){
+    this.id=value;
   }
 };
-obj8.show();
+console.log(ob.fullname);
+ob.ids="123";
+console.log(ob.id);
+
+let person={
+  name:"John",
+  get getname(){
+    return this.name;
+  },
+  set setname(value){
+    this.name=value;
+  }
+};
+console.log(person.getname);
+person.setname="kani";
+console.log(person.name);
+
+let validate={
+  age1:0,
+  set age(value){
+    if(value>=0){
+      this.age1=value;
+    }
+    else{
+      console.log("Invalid age");
+    }
+  },
+  get age(){
+    return this.age1;
+  }
+};
+console.log(validate.age);
+validate.age=-5;
+console.log(validate.age);
+validate.age=25;
+console.log(validate.age);
+
+//Prototypes
+//objects
+let parent={
+  greet(){
+    console.log("Helloo");
+  }
+};
+let child={};
+
+child.__proto__=parent;
+child.greet();
+
+let child2=Object.create(parent);
+child2.greet();
+
 
 

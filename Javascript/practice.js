@@ -392,8 +392,6 @@ let multiply=(a,b)=>{
 }
 console.log(multiply(3,4));
 
-
-
 //Objects and Data structures
 let details={
     id:1,
@@ -520,7 +518,7 @@ console.log(use);
 
 //cloning                   //let clone=use; this is copying reference
 let clone={};
-for(let key in use){  //nested
+for(let key in use){        //shallow copy
     clone[key]=use[key];
 }
 console.log(clone);
@@ -739,6 +737,7 @@ console.log(bill2);
 let numb1=255;
 console.log(numb1.toString(2));
 console.log(numb1.toString(16));
+console.log(numb1.toString(10));
 
 console.log((123).toString(2));
 
