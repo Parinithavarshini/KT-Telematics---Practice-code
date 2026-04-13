@@ -383,7 +383,7 @@ console.log(validate.age);
 validate.age=-5;
 console.log(validate.age);
 validate.age=25;
-console.log(validate.age);
+console.log(validate.age);   //op 0
 
 //Questions
 let stri="1234.4567";
@@ -419,7 +419,7 @@ let child2=Object.create(parent);
 child2.greet();
 
 //F.prototype
-function Person(name){
+function Person(name){     //constructor in class why func
   this.name=name;
   this.hello=function(){
     console.log("hello "+this.name);
@@ -484,7 +484,7 @@ users1.hello();
 class Use{}
 console.log(typeof Use);
 
-//Class Expression
+//Class Expression 
 let classexp=class{
   Sayhi(){
     console.log("Hello world");
@@ -578,3 +578,177 @@ class Rabbitc extends Animalc{
 let obr=new Rabbitc("Bunny");
 console.log(obr.name);
 
+//Static methods
+class Sayhello{
+  static Say(){
+    console.log("Hello I am henry");
+  }
+} 
+Sayhello.Say();
+
+//this keyword in static method
+class Case1{
+  static add(){
+    console.log(this===Case1)
+  }
+}
+Case1.add();
+
+//direct assignment to the class
+class Case2{}
+Case2.hello=function(){                    
+  console.log("Hello john");
+}
+Case2.hello();
+
+//sort obj using static compare method
+class Article {
+  constructor(title, date) {
+    this.title = title;
+    this.date = date;
+  }
+  static compare(a, b) {
+    return a.date - b.date;
+  }
+}
+let articles=[
+  new Article("AI",new Date("2024-01-01")),
+  new Article("JS",new Date("2023-01-01"))
+];
+console.log(articles.sort(Article.compare));
+
+//Static properties
+class Art{
+  static publish="Drawing";
+}
+console.log(Art.publish);
+
+//Static Inheritance
+class Bird{
+  static name="Parrot";
+  static fly(){
+    console.log("Parrot flies");
+  }
+}
+class Parrot extends Bird{}
+console.log(Parrot.name);
+Parrot.fly();
+
+//public
+class Method1{
+  work="Government";
+}
+let p=new Method1();
+console.log(p.work);
+
+//protected
+class Mobile{
+  battery=100;
+  charge(){
+    this.battery-=10;
+    console.log(this.battery);
+  }
+}
+let protect=new Mobile();
+protect.charge();
+// console.log(protect.battery);
+
+//protected + child class
+class Vehicle{
+  state="kerala";
+}
+class Lorry extends Vehicle{
+  run(){
+    console.log("State is "+this.state);
+  }
+}
+let ve=new Lorry();
+ve.run();
+
+//private
+class Mobile1{
+  #battery=100;
+  charge(){
+    this.#battery-=10;
+    console.log(this.#battery);
+  }
+}
+let protect1=new Mobile1();
+protect1.charge();
+//console.log(protect1.#battery);
+
+//private + child
+// class School{
+//   #name="abc school";
+// }
+// class Student extends School{
+//   study(){
+//     console.log(this.#name);                     //Private field '#name' must be declared in an enclosing class
+//   }
+// }
+// let std=new School();
+// std.study();
+
+//instanceof
+class Rat{}
+let rats=new Rat();
+console.log(rats instanceof Rat);
+
+//instanceof - inheritance
+class Animal2{}
+class Dog extends Animal2{}
+let ani=new Dog();
+console.log(ani instanceof Dog);
+console.log(ani instanceof Animal2);
+
+//array
+let arra=[1,3,4];
+console.log(arra instanceof Array);
+console.log(arra instanceof Object);
+
+//toString.call()
+console.log(Object.prototype.toString.call([]));
+console.log(Object.prototype.toString.call(123));
+console.log(Object.prototype.toString.call("abc"));
+console.log(Object.prototype.toString.call(true));
+
+//hasInstance
+class Color{
+  static [Symbol.hasInstance](obj){
+    return obj.eat===true;
+  }
+}
+let obj={eat:true};
+console.log(obj instanceof Color);
+
+//mixin            - adding methods to class without inheritance
+let hellomixin={
+  hello(){
+    console.log("hello "+this.name);
+  }
+}
+class Hi{
+  constructor(name){
+    this.name=name;
+  }
+}
+Object.assign(Hi.prototype,hellomixin);
+let ass=new Hi("Jack");
+ass.hello();
+
+//mixin inheritance
+let himixin={
+  hello(){
+    console.log("Hello");
+  }
+}
+class Ani{
+  eat(){
+    console.log("Eating");
+  }
+}
+class Monk extends Ani{}
+Object.assign(Ani.prototype,himixin);
+let di=new Monk();
+di.eat();
+di.hello();
