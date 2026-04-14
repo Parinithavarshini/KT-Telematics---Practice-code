@@ -752,3 +752,231 @@ Object.assign(Ani.prototype,himixin);
 let di=new Monk();
 di.eat();
 di.hello();
+
+//Error handling - try...catch
+//console.log(a);                         //ReferenceError: a is not defined -to handle this we use try catch
+console.log("hello");
+
+try{
+  console.log(a);
+}
+catch(err){
+  console.log("Error handled");
+}
+
+//No error - flow
+try{
+  console.log("try 1");
+  console.log("try 2");
+}
+catch(err){
+  console.log("Catch here");
+}
+
+//with error - flow
+try{
+  console.log("Start");
+  x;
+  console.log("End")
+}
+catch(err){
+  console.log("catch block here");
+}
+
+//Error object
+try{
+  x;
+}
+catch(err){
+  console.log("Type : "+err.name);
+  console.log("Message : "+err.message);
+}
+
+// try{                                  //cannot handle syntax error handles only runtime error
+//   {{{
+// }
+// catch(err){
+//   console.log("hello");
+// }
+
+//setTimeout
+// try{
+//   setTimeout(()=>{                //this runs after 1 sec so error is not handled and error is displayed
+//     x;
+//   },1000);
+// }
+// catch(err){
+//   console.log("Error handled");
+// }
+
+// setTimeout(()=>{
+//   try{
+//     x;
+//   }
+//   catch(err){
+//     console.log("Error handled while using setTimeout");
+//   }
+// },1000);
+
+//Real time use
+let json="{name kaviya}";
+try{
+  let user=JSON.parse(json);
+}
+catch(err){
+  console.log("Inavlid JSON "+err.name);
+}
+
+//throw 
+let objerr={age:45};
+try{
+  if(!objerr.name){
+    throw new Error("Name missing");
+  }
+}
+catch(err){
+  console.log(err.name);
+  console.log(err.message);
+}
+
+//rethrow
+try{
+try{
+  x;
+}
+catch(err){
+  if(err instanceof SyntaxError){
+    console.log("Syntax error");
+  }
+  else{
+    throw err;
+  }
+}
+}
+catch(err){
+  console.log("Error handled outside =>"+err.message);
+}
+
+//finally
+try{
+  console.log("Try runs");
+}
+catch{
+  console.log("catch runs");
+}
+finally{
+  console.log("Always runs");
+}
+
+//return in try
+function test(){
+  try{
+  return 1;
+}
+finally{
+  console.log("Successful execution");
+}
+}
+console.log(test());
+
+//custom error - own error message instead of general message
+class MyError extends Error {
+  constructor(msg) {
+    super(msg);
+    this.name = "Error ";
+  }
+}
+function check(name){
+  try {
+    if (!name) {
+      throw new MyError("Name is not here");
+    }
+    console.log("Welcome " + name); 
+  } 
+  catch (err) {
+    console.log(err.name + ": " + err.message);
+  }
+}
+check("");  
+check("Kaviya");
+
+//synchronous
+console.log("A");
+console.log("B");
+
+//Asynchronous
+// console.log("a");
+// setTimeout(()=>{
+//   console.log("b");
+// },1000);
+// console.log("c");
+
+//callback
+function entry(name,callback){
+  console.log("Hello "+name);
+  callback();
+}
+function exit(){
+  console.log("Bye");
+}
+entry("John",exit);
+
+//callback hell
+// setTimeout(()=>{
+//   console.log("Step 1");
+//   setTimeout(()=>{
+//     console.log("Step 2");
+//     setTimeout(()=>{
+//       console.log("Step 3");
+//     },1000);
+//   },1000);
+// },1000);
+
+//call stack-here javascript keeps track of what function is currently running
+//web api - handle aync task outside js engine
+//Callback Queue - A queue where completed async callbacks wait for execution
+//event loop means it will continuously check whether call stack is empty if yes, take next task from queue, it will decide when to run async code
+
+//Promises - 
+//resolve
+let promise=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+  setTimeout(() => {
+    resolve("success promise");
+  },1000);
+});
+promise.then(res=>{
+  console.log(res);
+})
+//reject
+let promise1=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+  setTimeout(() => {
+    reject("failed promise");
+  },1000);
+});
+promise1.catch(err=>{
+  console.log(err);
+})
+
+//handling promises
+let promise2=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+  setTimeout(() => {
+    resolve("failed promise");
+  },1000);
+});
+promise2.then(res=>{                //then will run whenever promise state is changed from pending to fulfilled
+  console.log(res);
+})
+.catch(err=>{                      //catch is used to handle errors 
+  console.log("Error: ",err);
+})
+.finally(()=>{                    //finally block runs always
+  console.log("Execution completed");
+})
+//promises will be in microtask has high priority executed first
+
+try{
+  console.log("dhv");
+}
+finally{
+  console.log("sjhg");
+}

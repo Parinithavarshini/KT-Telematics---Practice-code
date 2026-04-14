@@ -17,6 +17,8 @@ console.log(APPLE);   //symbols in variable name - _,$
 //1.Number
 console.log("-----Datatypes-----");
 let a=10;  //Integer
+
+
 let b=2.5;  //Decimal
 console.log(a+b);
 
@@ -783,8 +785,7 @@ console.log(hello);
 console.log("Hello\nworld");
 console.log("Name:\t Kala");
 console.log('It\'s a toy');
-console.log("C\\Data\\Program files"); //
-0
+console.log("C\\Data\\Program files"); 
 let world="hello";
 console.log(world.length);
 let world1="My\n";
