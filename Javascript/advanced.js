@@ -601,22 +601,6 @@ Case2.hello=function(){
 }
 Case2.hello();
 
-//sort obj using static compare method
-class Article {
-  constructor(title, date) {
-    this.title = title;
-    this.date = date;
-  }
-  static compare(a, b) {
-    return a.date - b.date;
-  }
-}
-let articles=[
-  new Article("AI",new Date("2024-01-01")),
-  new Article("JS",new Date("2023-01-01"))
-];
-console.log(articles.sort(Article.compare));
-
 //Static properties
 class Art{
   static publish="Drawing";
@@ -974,9 +958,79 @@ promise2.then(res=>{                //then will run whenever promise state is ch
 })
 //promises will be in microtask has high priority executed first
 
-try{
-  console.log("dhv");
+//Promise chaining  - executing async operations step by step by using .then() by passing results from one to next
+let prom=new Promise(resolve=>{
+  setTimeout(()=>resolve(1),1000);
+})
+.then(result=>{
+  console.log(result);
+  return result*2;
+})
+.then(result=>{
+  console.log(result);
+  return result*2;
+})
+.then(result=>{
+  console.log(result);
+})
+
+//Returning a promise
+let prom1=new Promise(resolve=>{
+  setTimeout(()=>resolve(2),1000);
+})
+.then(result=>{
+  console.log(result);
+  return new Promise(resolve=>{
+    setTimeout(()=>resolve(result*10),1000);
+  })
+})
+.then(result=>{
+  console.log(result);
+})
+
+let prom2=new Promise((resolve,reject)=>{
+  throw new Error("Error");              //throw inside promise works like reject
+})
+.catch(err=>console.log(err.message));
+
+//Promise API
+Promise.all([                      //all promises should be success then only it will run
+  Promise.resolve(10),
+  Promise.resolve(20),
+  Promise.resolve(30),
+])
+.then(result=>console.log(result));
+
+Promise.allSettled([             //after running all the promises it returns with the status
+  Promise.resolve(10),
+  Promise.reject(20),
+  Promise.resolve(30),
+])
+.then(result=>console.log(result));
+
+Promise.any([                    //gives the result of first successfull promise
+  Promise.reject(10),
+  Promise.reject(20),
+  Promise.resolve(30),
+])
+.then(result=>console.log(result));
+
+Promise.race([                 //gives the result of which is completed first
+  new Promise(resolve=>setTimeout(()=>resolve("First"),1000)),
+  new Promise(resolve=>setTimeout(()=>resolve("Second"),2000)),
+])
+.then(result=>console.log(result));
+
+//promisification
+function greet(name, callback){
+  callback("Hello " + name);
 }
-finally{
-  console.log("sjhg");
+function greetPromise(name){
+  return new Promise((resolve, reject) => {
+    greet(name, function(res){
+      resolve(res);   
+    });
+  });
 }
+greetPromise("John and Jack")
+  .then(res => console.log(res));  
