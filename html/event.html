@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Places to visit</title>
+</head>
+<body>
+    <h2>List of Places</h2>
+    <input type="text" id="place" placeholder="Enter name of the place">
+    <button id="btn">click to add</button>
+    <ul id="list"></ul>
+    <script>
+        let input = document.getElementById("place");
+        let btn = document.getElementById("btn");
+        let list = document.getElementById("list");
+        function addTask(){
+            if (input.value==="") {
+                return alert("Enter any place name");
+            }
+            let li=document.createElement("li");
+            li.innerText=input.value;
+            li.draggable=true;
+            //mouse click events
+            li.onclick=()=>console.log("Clicked: "+li.innerText);
+            //double click delete event
+            li.ondblclick=()=>{
+                li.remove();
+                console.log("Task deleted");
+            };
+            //hover effect - when mouse moves
+            li.onmouseover=()=>li.style.background = "lightblue";
+            li.onmouseout=()=>li.style.background = "";
+            // pointer events
+            li.onpointerdown=()=>console.log("Pointer down");
+            li.onpointerup=()=>console.log("Pointer up");
+            // drag events
+            li.ondragstart=()=>{
+                li.style.opacity = "0.5";
+                console.log("Dragging");
+            };
+            li.ondragend=()=>{
+                li.style.opacity = "1";
+                console.log("Drag End");
+            };
+            list.appendChild(li);   
+            input.value="";      //after append input value is balnk
+        }
+        //if we click button task is added
+        btn.onclick = addTask;
+        //press enter key to add task
+        input.onkeydown=(e)=>{
+            if(e.key==="Enter"){
+                addTask();
+            }
+        };
+        // window
+        window.addEventListener("load", () => console.log("Page loaded"));
+        window.addEventListener("resize", () => console.log("Window resized"));
+        window.addEventListener("scroll", () => console.log("Scrolling..."));
+        //input
+        input.addEventListener("focus", () => console.log("Input focused"));
+        input.addEventListener("blur", () => console.log("Input blur"));
+        //document
+        document.addEventListener("click",()=>console.log("Document clicked"));
+        document.addEventListener("mousemove",()=>console.log("Mouse moving"));
+    </script>
+
+</body>
+</html>

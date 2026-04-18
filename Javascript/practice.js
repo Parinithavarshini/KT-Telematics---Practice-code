@@ -332,29 +332,29 @@ function test(){
 test();
 console.log(fname);
 
-//return
-function add(a,b){
-    return a+b;
-}
-let result=add(2,3);
-console.log(result);
+// //return
+// function addt(a,b){
+//     return a+b;
+// }
+// let result=addt(2,3);
+// console.log(result);
 
-function add(a, b) {
-  return a + b;
-}
-function sub(a, b) {
-  return a - b;
-}
-function mul(a, b) {
-  return a * b;
-}
-function div(a, b) {
-  return a / b;
-}
-console.log(add(2, 3));       
-console.log(sub(5, 2));  
-console.log(mul(2, 3)); 
-console.log(div(6, 3)); 
+// function addt(a, b) {
+//   return a + b;
+// }
+// function sub(a, b) {
+//   return a - b;
+// }
+// function mul(a, b) {
+//   return a * b;
+// }
+// function div(a, b) {
+//   return a / b;
+// }
+// console.log(addt(2, 3));       
+// console.log(sub(5, 2));  
+// console.log(mul(2, 3)); 
+// console.log(div(6, 3)); 
 
 //function expression
 let new3=function(){

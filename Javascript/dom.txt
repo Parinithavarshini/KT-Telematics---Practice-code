@@ -1,0 +1,88 @@
+Javascript runtime flow
+    Open tab,js engine creates a window object this is global object
+    It stores browser related things
+    Document object-property inside window object - html file will load here
+DOM Tree 
+    While loading html each node is stored in tree like structure
+    After creating tree structure we can manipulate it using JS(change,style,event)
+Browser environment - Javascript_browser extra objects
+    *window-alert,fetch,setTimeOut,SetInterval
+    *document-represents full html page and change using it
+        document.title="new";
+        document.body.style.background = "yellow";
+    *location - Current page URL details
+        console.log(location.href);      //full url
+        location.reload();  
+    *navigator - User browser & device info
+        console.log(navigator.userAgent);
+        console.log(navigator.onLine); 
+        console.log(navigator.language); 
+    *history - track User visited pages
+        history.back();   
+        history.forward(); 
+        console.log(history.length); 
+JS directly HTML ah change panna mudiyadhu
+👉 DOM moolama than change pannum
+
+Walking the DOM --->moving between element
+
+        el.parentElement
+        el.children
+        el.firstElementChild
+        el.lastElementChild
+        el.nextElementsibling
+        el.previousElementSibling
+
+        el.children//only elements
+        el.childNodes //includes text nodes
+
+        el.innerText // only visible text
+        el.textContent // all text (even hidden)
+
+        parent.append(child)//modern
+        parent.prepend(child)//add at start
+        parent.before(child)
+        parent.after(child)
+
+DOM:
+Selecting elements = getElementbyId("title");
+                     getElementbyClassName("box");
+                     getElementByTagName("p");
+
+                     querySelector("p")- selects first matching element
+                     querySelectorAll("p")-selects all matching elements
+
+                     
+                    document.body.style.backgroundColor="yellow"
+                    document.createElement("div");
+                    document.body.appendchild(div);
+
+Node:
+    <div>title</div>
+        <div></div> - element node
+        title - text node   
+Node properties:
+    1.nodeType
+        1-element
+        3-text
+        8-comment 
+    2.nodename - tag nodename 
+        <div>-"DIV"
+        Text-#text
+    3.textcontent - return text
+
+Attribute - original html value (initial value)
+Property - Current value changed by js or user
+
+Element size ans scrolling
+    box.clientHeight
+    box.scrollHeight
+    box.offsetHeight
+
+    box.scrollTop = 50;// scroll inside box
+    console.log(box.scrollTop);// current scroll position
+
+window Size & Scrolling:
+    innerWidth,innerHeight --> size of visible browser area
+    scrollY- verticall scroll,scrollX- horizontal scroll
+    

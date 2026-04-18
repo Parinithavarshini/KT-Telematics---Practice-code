@@ -328,9 +328,9 @@ for(let x in user){
 console.log(user);
 
 //extensions,seal and freeze
-Object.preventExtensions(user);      //cannot add new properties but can modify existing one
-Object.seal(user);                   //cannot add or delete,but modify existing one
-Object.freeze(user);                 //cannot do anything
+// Object.preventExtensions(user);      //cannot add new properties but can modify existing one
+// Object.seal(user);                   //cannot add or delete,but modify existing one
+// Object.freeze(user);                 //cannot do anything
 
 console.log(Object.isFrozen(user));
 console.log(Object.isSealed(user));
@@ -870,7 +870,7 @@ class MyError extends Error {
     this.name = "Error ";
   }
 }
-function check(name){
+function checking(name){
   try {
     if (!name) {
       throw new MyError("Name is not here");
@@ -881,8 +881,8 @@ function check(name){
     console.log(err.name + ": " + err.message);
   }
 }
-check("");  
-check("Kaviya");
+checking("");  
+checking("Kaviya");
 
 //synchronous
 console.log("A");
@@ -921,116 +921,187 @@ entry("John",exit);
 //Callback Queue - A queue where completed async callbacks wait for execution
 //event loop means it will continuously check whether call stack is empty if yes, take next task from queue, it will decide when to run async code
 
-//Promises - 
+//Promises
 //resolve
-let promise=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
-  setTimeout(() => {
-    resolve("success promise");
-  },1000);
-});
-promise.then(res=>{
-  console.log(res);
-})
+// let promise=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+//   setTimeout(() => {
+//     resolve("success promise");
+//   },1000);
+// });
+// promise.then(res=>{
+//   console.log(res);
+// })
 //reject
-let promise1=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
-  setTimeout(() => {
-    reject("failed promise");
-  },1000);
-});
-promise1.catch(err=>{
-  console.log(err);
-})
+// let promise1=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+//   setTimeout(() => {
+//     reject("failed promise");
+//   },1000);
+// });
+// promise1.catch(err=>{
+//   console.log(err);
+// })
 
 //handling promises
-let promise2=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
-  setTimeout(() => {
-    resolve("failed promise");
-  },1000);
-});
-promise2.then(res=>{                //then will run whenever promise state is changed from pending to fulfilled
-  console.log(res);
-})
-.catch(err=>{                      //catch is used to handle errors 
-  console.log("Error: ",err);
-})
-.finally(()=>{                    //finally block runs always
-  console.log("Execution completed");
-})
+// let promise2=new Promise(function(resolve,reject){   //executor function runs immediately when the promise is created
+//   setTimeout(() => {
+//     resolve("failed promise");
+//   },1000);
+// });
+// promise2.then(res=>{                //then will run whenever promise state is changed from pending to fulfilled
+//   console.log(res);
+// })
+// .catch(err=>{                      //catch is used to handle errors 
+//   console.log("Error: ",err);
+// })
+// .finally(()=>{                    //finally block runs always
+//   console.log("Execution completed");
+// })
 //promises will be in microtask has high priority executed first
 
 //Promise chaining  - executing async operations step by step by using .then() by passing results from one to next
-let prom=new Promise(resolve=>{
-  setTimeout(()=>resolve(1),1000);
-})
-.then(result=>{
-  console.log(result);
-  return result*2;
-})
-.then(result=>{
-  console.log(result);
-  return result*2;
-})
-.then(result=>{
-  console.log(result);
-})
+// let prom=new Promise(resolve=>{
+//   setTimeout(()=>resolve(1),1000);
+// })
+// .then(result=>{
+//   console.log(result);
+//   return result*2;
+// })
+// .then(result=>{
+//   console.log(result);
+//   return result*2;
+// })
+// .then(result=>{
+//   console.log(result);
+// })
 
 //Returning a promise
-let prom1=new Promise(resolve=>{
-  setTimeout(()=>resolve(2),1000);
-})
-.then(result=>{
-  console.log(result);
-  return new Promise(resolve=>{
-    setTimeout(()=>resolve(result*10),1000);
-  })
-})
-.then(result=>{
-  console.log(result);
-})
+// let prom1=new Promise(resolve=>{
+//   setTimeout(()=>resolve(2),1000);
+// })
+// .then(result=>{
+//   console.log(result);
+//   return new Promise(resolve=>{
+//     setTimeout(()=>resolve(result*10),1000);
+//   })
+// })
+// .then(result=>{
+//   console.log(result);
+// })
 
-let prom2=new Promise((resolve,reject)=>{
-  throw new Error("Error");              //throw inside promise works like reject
-})
-.catch(err=>console.log(err.message));
+// let prom2=new Promise((resolve,reject)=>{
+//   throw new Error("Error");              //throw inside promise works like reject
+// })
+// .catch(err=>console.log(err.message));
 
-//Promise API
-Promise.all([                      //all promises should be success then only it will run
-  Promise.resolve(10),
-  Promise.resolve(20),
-  Promise.resolve(30),
-])
-.then(result=>console.log(result));
+// //Promise API
+// Promise.all([                      //all promises should be success then only it will run
+//   Promise.resolve(10),
+//   Promise.resolve(20),
+//   Promise.resolve(30),
+// ])
+// .then(result=>console.log(result));
 
-Promise.allSettled([             //after running all the promises it returns with the status
-  Promise.resolve(10),
-  Promise.reject(20),
-  Promise.resolve(30),
-])
-.then(result=>console.log(result));
+// Promise.allSettled([             //after running all the promises it returns with the status
+//   Promise.resolve(10),
+//   Promise.reject(20),
+//   Promise.resolve(30),
+// ])
+// .then(result=>console.log(result));
 
-Promise.any([                    //gives the result of first successfull promise
-  Promise.reject(10),
-  Promise.reject(20),
-  Promise.resolve(30),
-])
-.then(result=>console.log(result));
+// Promise.any([                    //gives the result of first successfull promise
+//   Promise.reject(10),
+//   Promise.reject(20),
+//   Promise.resolve(30),
+// ])
+// .then(result=>console.log(result));
 
-Promise.race([                 //gives the result of which is completed first
-  new Promise(resolve=>setTimeout(()=>resolve("First"),1000)),
-  new Promise(resolve=>setTimeout(()=>resolve("Second"),2000)),
-])
-.then(result=>console.log(result));
+// Promise.race([                 //gives the result of which is completed first
+//   new Promise(resolve=>setTimeout(()=>resolve("First"),1000)),
+//   new Promise(resolve=>setTimeout(()=>resolve("Second"),2000)),
+// ])
+// .then(result=>console.log(result));
 
-//promisification
-function greet(name, callback){
-  callback("Hello " + name);
+//promisification   - converting a callback based function into a promise based function
+// function greet(name, callback){
+//   callback("Hello " + name);
+// }
+// function greetPromise(name){
+//   return new Promise((resolve, reject) => {
+//     greet(name, function(res){
+//       resolve(res);   
+//     });
+//   });
+// }
+// greetPromise("John and Jack")
+//   .then(res => console.log(res));  
+
+//Microtask - High priority runs immediately after sync code - .then(),.catch(),await
+//Macrotask - Low priority -setInterval,setTimeout
+
+//async function - always returns promise
+async function greet(){
+  return "greeting hello";
 }
-function greetPromise(name){
-  return new Promise((resolve, reject) => {
-    greet(name, function(res){
-      resolve(res);   
-    });
+let x=greet();
+console.log(x);
+
+async function getdata(){
+  return "hello parinitha";
+}
+getdata().then(resolve=>console.log(resolve));
+
+//async and await
+function fetchdata(){
+  return new Promise(resolve=>{
+    setTimeout(()=>resolve("Data received"),1000);
   });
 }
-greetPromise("John and Jack")
-  .then(res => console.log(res));  
+async function showData(){
+  let result=await fetchdata();
+  console.log(result);
+}
+showData();
+
+// async function fi(){
+//     user=await fetch("/user");
+//     data=await user.json();
+// }  //multiple awaits runs step by step like normal code
+
+//Module - 1 file
+//main.js = 1 module,sayhi.js=1 module
+//why modules - single file all content is difficult,so seperate modules
+// advanced.js
+// import {sayHellos} from './practice.js';
+// let message=sayHellos("Parinitha");
+// console.log(message);
+
+//<script type="module" src="main.js"></script>//
+// we should use type module if not import export does not work
+
+//the varibale in one file is not directly visible to other file
+
+/*let user="john";   --in practice.js
+  console.log(user); --in advance.js not possible
+*/
+
+//sample files multiple times import aanalum 1 time thaa run aagum,stored in cache
+// import "./test.js";
+// import "./test.js";
+
+//modules always use use strict
+
+//Object - modules share data by reference
+//export let admin={name:"John"};   --file1.js
+
+//import {admin} from "./file1.js";  --file2.js
+//admin.anme="Peter";
+
+//import {admin} from "./file1.js";  --file3.js
+//console.log(admin.name);
+
+
+
+
+
+
+
