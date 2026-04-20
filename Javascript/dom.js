@@ -1,5 +1,5 @@
 let heading=document.querySelector("h1");    //h1-tag
-heading.textContent="Document object model";
+heading.textContent="Document object model";    //innertext,innerHtml
 
 let ul=document.querySelector("ul");   //ul-id
 ul.children
@@ -16,9 +16,9 @@ ul.firstElementChild.remove();
 //     alert("Button clicked");
 // })
 
-document.getElementById("title");
-title.textContent="DOM";
-title.style.color="brown";
+let title2=document.getElementById("title");
+title2.textContent="DOM";
+title2.style.color="brown";
 document.body.style.backgroundColor="lightblue";
 
 let lis=document.createElement("li");
