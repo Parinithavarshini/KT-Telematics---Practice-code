@@ -1,0 +1,251 @@
+Web app
+    -Front end (Client side - Browser(client)) - HTML,CSS,JS
+    -Back end (Server side)
+
+Node js-run time environment allows js to run outside browser
+
+Before node js:
+    Javascript - only in browser (frontend)
+    Backend - Java, Python, PHP, Ruby
+After node js:
+    Both frontend and backend
+
+Created by - Ryan Dahl (2009)
+Before node => each user = one thread,1000 user = 1000 threads,too much memory usage
+Node js =>Single thread,asynchronous and event driven
+
+Node js is built by:
+    1.v8 engine
+        Converts js code to machine code
+    2.libuv
+        handles file system operations and network req
+    3.Event loop 
+        Decides what to run next
+
+Node js - other than v8 we have some features
+    1.read or write files
+    2.Connect with db
+    3.Acts like a server (eg : in front end we submit a form and request goes to backend(server))
+          --handles req and response
+    
+    Cons:
+        1.DOM Manipulation not possible (because we run in server side)
+
+Browser has window object - it has document,setTimeout and other things
+Same like the window object in browser,we have -- global object-- in node js
+
+Key features:
+    -Fast execution - built on v8 engine
+    -Non-blocking (asynchronous) - Handles multiple user same time
+    -File system access
+    -Same language for frontend and backend
+    -node package manager - ready made code downloading tool (express - create server easily,axios-send http req)
+    -single threaded but handles multiple tasks
+
+async tasks-> browser -> web api
+              node -> libuv
+after completing async task result is stored in callback queue
+event loop is like manager call stack free - execute async task
+                           call stack full - wait
+
+Working of node js:
+    1.Event driven model 
+        -waits continuously and if event triggered it executes
+        1->Event emitter - event is triggered
+        2->Event Listener - if event occurs callback is called
+        3->Event loop 
+    2.Non blocking I/O
+        Does not wait for async tasks continuously do the work
+
+Node.js Execution flow
+Request
+   ↓
+Event Queue
+   ↓
+Event Loop
+   ↓
+Call Stack (sync)
+   ↓
+Async → libuv (background)
+   ↓
+Callback Queue
+   ↓
+Event Loop
+   ↓
+Call Stack
+   ↓
+Response
+
+
+Browser                  vs                    Node js
+Runs frontend js                        Runs backend js
+Has window,document                     Global object
+DOM Access                              No DOM access
+
+
+Running of node js
+    node app.js
+        -process starts => file loads into memory =>Initialize global obj,modules,event loop=>v8 engine starts=>code executes
+
+Execution priority
+1. Synchronous code
+2. process.nextTick()   - before promises and after sync code
+3. Promises (microtasks)
+4. setTimeout / setInterval (macrotasks)
+
+CLI IN Node js
+1.node app.js  - runs js file
+2.node -v - installed version
+3.node --watch app.js - if change code node restarts automatically
+4.node --inspect app.js - debugging in devtools
+5.node --check app.js - check errors not run code
+
+REPL - Read evaluate print loop
+-interactive node js environment used to quicklyl execute and test js
+
+NVM - Node version manager
+   -install,manage and switch b/w multiple versions
+   -Instead of installing only one version we can install many versions and switch between it
+
+NVM Commands:
+    =>nvm -v -check nvm version
+    =>nvm install 18 -install node version
+    =>nvm list -list installed version
+    =>nvm use 18 -use specific version
+    =>nvm install node -install latest version
+
+Streams and buffers:
+Heap memory - memory where node js sores objects,variables and functions.
+            heap has fixed memory if overflow app will crash
+
+Buffer - temporary memory to store data
+    -videos,images,files - binary data ,js cannot handle it so stored in buffers
+Stream - process of transporting data as smaller chunks
+
+Client sent request
+        ↓
+Request sent to server
+        ↓
+Server sends video as smaller chunks
+        ↓
+Each chunk stored in BUFFER
+        ↓
+Video player plays immediately
+        ↓
+Next chunks come and video plays continuously
+
+4 types of streams:
+    Readable - get data (server reads the data)
+    Writable - send data (server give response)
+    Duplex - both read and write
+    Transform - data modify
+
+---Modules---
+    -reusable code file
+    -Instead of writing all the code in same file,split into small parts
+    -1 part = module
+
+To send a file outside - module.exports
+To receive a file - require()
+
+Types:
+=>1.Core modules - built in with node js
+    1.fs module
+
+//using fs module to read a file content
+const fs=require("fs");
+fs.readFile("node.txt","utf-8",(err,data)=>{
+    console.log(data);
+});
+
+//using fs module to write a file content
+// const fs1=require("fs");
+// fs1.writeFile("node.txt","New content is written",()=>{
+//     console.log("Saved!");
+// });
+
+    2.HTTP Module - create server and handle req and res
+const http=require("http");
+const server=http.createServer((req,res)=>{ 
+    res.write("Hello World"); 
+    res.end(); 
+});
+server.listen(3000);
+
+=>res.write("hello");
+=>res.end();
+=>res.setHeader();
+
+    3.Path Module
+const fs=require("fs");
+const path = require("path");
+const filePath = path.join(__dirname, "node.txt");
+fs.readFile(filePath,"utf-8",(err,data)=>{
+    console.log(data);
+});
+
+
+=>2.Custom modules
+math.js  =>   
+function add(a, b){
+    return a + b;
+}
+module.exports = add;
+
+app.js =>
+const add = require("./math");
+console.log(add(5, 3));
+
+=>3.Third party module
+code written by other developers that you can use
+
+npm install express
+const express=require("express");
+
+//os modules - to get system details
+const os = require("os");
+// const os = require("os");
+// console.log(os.platform());
+// console.log(os.arch());
+// console.log(os.totalmem());
+// console.log(os.freemem());
+// console.log(os.cpus());
+
+//url module
+const myUrl=new URL("https://example.com/home");
+console.log(myUrl.hostname);
+
+//cypto module
+const crypto = require("crypto");
+crypto.createHash("sha256")
+      .update("hello")
+      .digest("hex");
+
+
+//Import types
+1.Full module Import
+const math=require("./math");
+
+2.Specific Import
+const{add}=require("./math");
+
+3.JSON Import
+const data=require("./data.json");
+console.log(data.name);
+
+
+---Working with File System---
+1.read file
+2.write file
+3.createReadStream
+4.createWriteStream
+5.mkdir
+6.readdir
+
+1.Delete file - fs.unlink("test.txt", () => {});
+2.Remove folder - fs.rm("testFolder", { recursive: true }, () => {});
+3.Rename file - fs.rename("old.txt", "new.txt", () => {});
+4.Check if file exist or not - fs.existsSync("test.txt");
+
+---HTTP Module in node.js---
+Using http module in node.js we can create server
